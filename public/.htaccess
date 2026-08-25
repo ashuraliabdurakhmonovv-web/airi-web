@@ -1,0 +1,252 @@
+# AIRI — static export (Next.js `output: "export"`, `trailingSlash: true`)
+# Bu fayl `out/` bilan birga public_html ichiga ko'chiriladi.
+#
+# DIQQAT: 3-bo'limdagi `# BEGIN legacy-news` / `# END legacy-news` markerlari
+# orasini `scripts/generate-legacy-redirects.mjs` build vaqtida avtomatik
+# to'ldiradi. U yerga qo'lda yozmang — keyingi build ustidan yozib yuboradi.
+
+DirectoryIndex index.html
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ── 1. Kanonik host: www.airi.uz -> airi.uz (301) ───────────────────────
+  # Aks holda Google ikkala hostni alohida sayt deb indekslaydi (dublikat).
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L,NE]
+
+  # ── 2. Mavjud fayl yoki papkaga tegmaymiz ───────────────────────────────
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # ── 3. ESKI SAYT URL'LARI -> yangi sahifalar (301) ──────────────────────
+  # Eski sayt manzillari `/uz/...`, `/ru/...`, `/en/...` prefiksli ham,
+  # prefikssiz ham bo'lgan. Quyidagi shablonlar ikkalasini ham bitta
+  # sakrashda (301 chain'siz) yangi manzilga olib boradi.
+  #
+  # `legacy-map` markerlari orasidagi qoidalardan `old.airi.uz` uchun
+  # `deploy/old.airi.uz/.htaccess` ham generatsiya qilinadi — moslikni
+  # faqat SHU YERDA tahrirlang.
+  # BEGIN legacy-map
+
+  # ── 3.0. O'CHIRILGAN MANZILLAR (410 Gone) ───────────────────────────────
+  # Eski CMS'da `not-found` degan yozuv bo'lgan va u indekslanib qolgan
+  # (Search Console: 3 oyda 1335 ta ko'rsatish). 410 — "abadiy yo'q" degani;
+  # Google uni 404'ga qaraganda ancha tez indeksdan chiqaradi.
+  # `robots.txt` da BLOKLANMASIN — bloklansa robot bu javobni ko'rmaydi.
+  RewriteRule ^(?:(?:uz|ru|en)/)?not-found/?$ - [G]
+
+  # --- Eski `/ru/...` manzillari endi YANGI ruscha sahifalarga ---------------
+  # `/ru/` va `/en/` endi haqiqiy sahifalar (statik eksportda papka sifatida
+  # mavjud). 2-qoida ularni allaqachon o'tkazib yuboradi; quyidagilar esa
+  # ESKI saytdagi ruscha manzillarni yangi ruscha sahifaga olib boradi.
+  RewriteRule ^ru/(?:institute|about|ob-institute)/?$ /ru/umumiy-malumot/institute-abouttheinstitute/ [R=301,L]
+  RewriteRule ^ru/(?:structure|struktura)/?$ /ru/umumiy-malumot/institute-structureofinstitute/ [R=301,L]
+  RewriteRule ^ru/(?:team|staff|rukovodstvo)/?$ /ru/umumiy-malumot/institute-instituteteam/ [R=301,L]
+  RewriteRule ^ru/(?:teachers|professors)/?$ /ru/umumiy-malumot/institute-teachers/ [R=301,L]
+  RewriteRule ^ru/(?:history|istoriya)/?$ /ru/umumiy-malumot/history/ [R=301,L]
+  RewriteRule ^ru/(?:partners|partnery)(?:/.*)?$ /ru/umumiy-malumot/partners/ [R=301,L]
+  RewriteRule ^ru/(?:vacanc(?:y|ies)|vakansii)/?$ /ru/umumiy-malumot/opendata-vacancies/ [R=301,L]
+  RewriteRule ^ru/faq/?$ /ru/umumiy-malumot/faq/ [R=301,L]
+  RewriteRule ^ru/news(?:/.*)?$ /ru/umumiy-malumot/news/ [R=301,L]
+  RewriteRule ^ru/(?:science|research|nauka)/?$ /ru/ilmiy-tadqiqot/ [R=301,L]
+  RewriteRule ^ru/(?:laborator(?:y|ies)|labs|laboratorii)(?:/.*)?$ /ru/ilmiy-tadqiqot/research-laboratories/ [R=301,L]
+  RewriteRule ^ru/(?:conferences?|konferentsii)/?$ /ru/ilmiy-tadqiqot/research-conferences/ [R=301,L]
+  RewriteRule ^ru/(?:doctorate|aspirantura|phd)/?$ /ru/ilmiy-tadqiqot/research-doctorate/ [R=301,L]
+  RewriteRule ^ru/(?:scientific-?council|council|sovet)/?$ /ru/ilmiy-tadqiqot/research-scientificboard/ [R=301,L]
+  RewriteRule ^ru/(?:contacts?|kontakty|kontakt)/?$ /ru/boglanish/ [R=301,L]
+
+  # --- Eski `/en/...` manzillari endi YANGI inglizcha sahifalarga ------------
+  RewriteRule ^en/(?:institute|about)/?$ /en/umumiy-malumot/institute-abouttheinstitute/ [R=301,L]
+  RewriteRule ^en/structure/?$ /en/umumiy-malumot/institute-structureofinstitute/ [R=301,L]
+  RewriteRule ^en/(?:team|staff|management)/?$ /en/umumiy-malumot/institute-instituteteam/ [R=301,L]
+  RewriteRule ^en/(?:teachers|professors|faculty)/?$ /en/umumiy-malumot/institute-teachers/ [R=301,L]
+  RewriteRule ^en/history/?$ /en/umumiy-malumot/history/ [R=301,L]
+  RewriteRule ^en/partners(?:/.*)?$ /en/umumiy-malumot/partners/ [R=301,L]
+  RewriteRule ^en/(?:vacanc(?:y|ies)|jobs|careers)/?$ /en/umumiy-malumot/opendata-vacancies/ [R=301,L]
+  RewriteRule ^en/faq/?$ /en/umumiy-malumot/faq/ [R=301,L]
+  RewriteRule ^en/news(?:/.*)?$ /en/umumiy-malumot/news/ [R=301,L]
+  RewriteRule ^en/(?:science|research)/?$ /en/ilmiy-tadqiqot/ [R=301,L]
+  RewriteRule ^en/(?:laborator(?:y|ies)|labs)(?:/.*)?$ /en/ilmiy-tadqiqot/research-laboratories/ [R=301,L]
+  RewriteRule ^en/conferences?/?$ /en/ilmiy-tadqiqot/research-conferences/ [R=301,L]
+  RewriteRule ^en/(?:doctorate|phd|doctoral-?studies)/?$ /en/ilmiy-tadqiqot/research-doctorate/ [R=301,L]
+  RewriteRule ^en/(?:scientific-?council|council)/?$ /en/ilmiy-tadqiqot/research-scientificboard/ [R=301,L]
+  RewriteRule ^en/contacts?/?$ /en/boglanish/ [R=301,L]
+
+  # ── 3.1. AIRI.UZ NING O'ZIDAGI ESKI "YASSI" MANZILLAR ───────────────────
+  # Sayt ilgari bo'limsiz, yassi strukturada edi (`/institute-abouttheinstitute`,
+  # `/elbekqosimov`), keyin `/umumiy-malumot/...` va `/ilmiy-tadqiqot/...`
+  # bo'limlariga ko'chirildi. O'sha eski manzillar hech qayerda qamrab
+  # olinmagan edi va 404 qaytarardi — Search Console bo'yicha 3 oyda
+  # ~7000 ko'rsatish va ~160 klik shu yerda yo'qolgan.
+  #
+  # Ataylab ochiq shablon (`^institute-(.+)$`) ISHLATILMAGAN: noma'lum
+  # suffiks 301 qilib, keyin baribir 404 berardi. Ro'yxat yopiq va aniq.
+
+  # Bo'limlararo istisnolar — umumiy qoidalardan OLDIN turishi shart
+  RewriteRule ^(?:(?:uz|ru|en)/)?institute-degreeawardingscientificcouncil/?$ /ilmiy-tadqiqot/degree-awarding-council/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?research-internationalrelationships/?$ /umumiy-malumot/research-internationalrelationships/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?generalinformation-trainingcourse/?$ /ilmiy-tadqiqot/research-doctorate/ [R=301,L]
+
+  # Umumiy ma'lumot bo'limiga ko'chgan yassi manzillar
+  RewriteRule ^(?:(?:uz|ru|en)/)?(institute-(?:abouttheinstitute|eventcalendar|graduates|instituteteam|internaldocuments|structureofinstitute|talentedyouth|teachers))/?$ /umumiy-malumot/$1/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(opendata-(?:managementreceptiondays|requisitesoftheinstitute|vacancies))/?$ /umumiy-malumot/$1/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(generalinformation-statesymbols)/?$ /umumiy-malumot/$1/ [R=301,L]
+
+  # Ilmiy tadqiqot bo'limiga ko'chgan yassi manzillar
+  RewriteRule ^(?:(?:uz|ru|en)/)?(research-(?:conferences|doctorate|laboratories|scientificboard))/?$ /ilmiy-tadqiqot/$1/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?scientificresearch/?$ /ilmiy-tadqiqot/ [R=301,L]
+
+  # ── 3.2. ESKI SHAXS SAHIFALARI ──────────────────────────────────────────
+  # Yassi `/ismfamiliya` manzillari. Mos sahifasi borlar aniq manzilga,
+  # yangi saytda vakili yo'qlar esa o'z bo'limi ro'yxatiga boradi.
+  RewriteRule ^(?:(?:uz|ru|en)/)?teachersshavkatfozilov/?$ /umumiy-malumot/institute-teachers/fozilov-shavkat/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?teachersmirzayevnomoz/?$ /umumiy-malumot/institute-teachers/mirzayev-nomaz/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?teachersravshannormakhammad/?$ /umumiy-malumot/institute-teachers/ravshanov-normaxmad/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?ilxomismailov/?$ /umumiy-malumot/institute-graduates/ilxom-ismailov/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?qodirbekmaxarov/?$ /umumiy-malumot/institute-graduates/qodirbek-maxarov/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?masudjoneshmurodov/?$ /umumiy-malumot/institute-graduates/masudjon-eshmurodov/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?gulstanartikbayeva/?$ /umumiy-malumot/institute-graduates/gulstan-artikbayeva/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?talentedyouthboronovnazim/?$ /umumiy-malumot/institute-talentedyouth/boronov-nazim/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?talentedyouthsshakhzodbekyetmishbayev/?$ /umumiy-malumot/institute-talentedyouth/yetmishboyev-shaxzod/ [R=301,L]
+  # Eski manzilda ism ortidan UUID kelgan
+  RewriteRule ^(?:(?:uz|ru|en)/)?talentedyouthotabekusmanov[0-9a-f-]*/?$ /umumiy-malumot/institute-talentedyouth/usmonov-otabek/ [R=301,L]
+
+  # Ilmiy kengash a'zolari — shaxsiy sahifasi yo'q, kengash ro'yxatiga
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:rustamyusupov|aminovsabur)/?$ /ilmiy-tadqiqot/research-scientificboard/ [R=301,L]
+
+  # Yangi saytda vakili bo'lmagan xodimlar — institut jamoasi sahifasiga.
+  # (`/elbekqosimov` — eng ko'p klikli eski manzil: 3 oyda 43 klik.)
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:elbekqosimov|xabibaabdiyeva|kamolaablazova|davronshokirov|boburallaberdiyev|sardorjumaniyozov|nozirtoxtamurodov)/?$ /umumiy-malumot/institute-instituteteam/ [R=301,L]
+
+  # ── 3.3. ESKI YAKKA SAHIFALAR VA ID'LAR ─────────────────────────────────
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:rekvizit|guvohnoma)/?$ /umumiy-malumot/opendata-requisitesoftheinstitute/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:maqola2|maqola3|tadqiqotmaqolasi)/?$ /ilmiy-tadqiqot/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?digitaltechnologiesandartificialintelligencetodayandthefuture/?$ /ilmiy-tadqiqot/research-conferences/ [R=301,L]
+  # Doktorantura ixtisosliklari eski manzilda raqam bilan berilgan edi
+  RewriteRule ^(?:(?:uz|ru|en)/)?05\.?01\.?(?:02|07|11|03)/?$ /ilmiy-tadqiqot/research-doctorate/ [R=301,L]
+  # Eski PDF ko'ruvchi — bunday marshrut endi yo'q
+  RewriteRule ^(?:(?:uz|ru|en)/)?pdf-viewer(?:/.*)?$ /umumiy-malumot/institute-internaldocuments/ [R=301,L]
+
+  # BEGIN legacy-news
+  # (build vaqtida generatsiya qilinadi — bu yerga qo'lda yozmang)
+  # END legacy-news
+
+  # Yuqoridagi ro'yxatda topilmagan har qanday eski yangilik -> yangiliklar ro'yxati
+  RewriteRule ^(?:(?:uz|ru|en)/)?news(?:/.*)?$ /umumiy-malumot/news/ [R=301,L]
+
+  # --- Umumiy ma'lumot bo'limi ---
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:institute|about|about-?us|about-?institute|ob-institute)/?$ /umumiy-malumot/institute-abouttheinstitute/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:structure|struktura|tuzilma)/?$ /umumiy-malumot/institute-structureofinstitute/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:team|staff|management|leadership|rahbariyat|rukovodstvo|jamoa)/?$ /umumiy-malumot/institute-instituteteam/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:history|tarix|istoriya)/?$ /umumiy-malumot/history/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:partners|hamkorlar|partnery)(?:/.*)?$ /umumiy-malumot/partners/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:vacanc(?:y|ies)|vakansiya|vakansiyalar)/?$ /umumiy-malumot/opendata-vacancies/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:faq|savol-javob)/?$ /umumiy-malumot/faq/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:documents|hujjatlar|dokumenty)(?:/.*)?$ /umumiy-malumot/institute-internaldocuments/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:events|calendar|tadbirlar|meropriyatiya)/?$ /umumiy-malumot/institute-eventcalendar/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:international|xalqaro|mezhdunarodnoe)(?:/.*)?$ /umumiy-malumot/research-internationalrelationships/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:teachers|professors|oqituvchilar)(?:/.*)?$ /umumiy-malumot/institute-teachers/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:graduates|bitiruvchilar|vypuskniki)(?:/.*)?$ /umumiy-malumot/institute-graduates/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:talented-?youth|iqtidorli-?yoshlar)(?:/.*)?$ /umumiy-malumot/institute-talentedyouth/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:requisites|rekvizit|rekvizitlar)/?$ /umumiy-malumot/opendata-requisitesoftheinstitute/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:reception|qabul|priem)/?$ /umumiy-malumot/opendata-managementreceptiondays/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:state-?symbols|symbols|ramzlar|simvoly)/?$ /umumiy-malumot/generalinformation-statesymbols/ [R=301,L]
+
+  # --- Ilmiy tadqiqot bo'limi ---
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:science|research|ilmiy|nauka)/?$ /ilmiy-tadqiqot/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:laborator(?:y|ies)|labs|laboratoriya|laboratoriyalar)(?:/.*)?$ /ilmiy-tadqiqot/research-laboratories/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:conferences?|konferensiya|konferentsii)/?$ /ilmiy-tadqiqot/research-conferences/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:doctorate|doktorantura|phd|aspirantura|doctoral-?students|doctorate-?(?:admission|directions|quotas)|scientific-?supervisors)/?$ /ilmiy-tadqiqot/research-doctorate/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:seminars?|seminarlar)/?$ /ilmiy-tadqiqot/seminars/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:announcements|elonlar|e-lonlar|obyavleniya)/?$ /ilmiy-tadqiqot/announcements/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:scientific-?council|council|kengash|sovet)/?$ /ilmiy-tadqiqot/research-scientificboard/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:dissertations?|dissertatsiya|zashchita)/?$ /ilmiy-tadqiqot/dissertation-defense-announcements/ [R=301,L]
+
+  # --- Ishlab chiqarish bo'limi ---
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:projects|loyihalar|proekty)(?:/.*)?$ /ishlab-chiqarish/projects/ [R=301,L]
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:production|proizvodstvo)/?$ /ishlab-chiqarish/ [R=301,L]
+
+  # --- Bog'lanish ---
+  RewriteRule ^(?:(?:uz|ru|en)/)?(?:contacts?|aloqa|kontakty|kontakt)/?$ /boglanish/ [R=301,L]
+
+  # --- Yuqoridagilarga tushmagan til prefiksli manzillar --------------------
+  # Bu OXIRGI legacy qoidalar bo'lishi shart: undan yuqoridagilar aniqroq.
+  #
+  # DIQQAT: avval uchalasi ham bosh sahifaga (`/`) ketardi. Endi `/ru/**`
+  # haqiqiy sahifalar bo'lgani uchun ruscha manzil ruscha bosh sahifaga
+  # borishi kerak — aks holda ruscha natijani bosgan foydalanuvchi
+  # o'zbekcha sahifaga tushardi.
+  RewriteRule ^uz(?:/.*)?$ /    [R=301,L]
+  RewriteRule ^ru(?:/.*)?$ /ru/ [R=301,L]
+  RewriteRule ^en(?:/.*)?$ /en/ [R=301,L]
+
+  # END legacy-map
+
+  # ── 4. Trailing slash kanonizatsiyasi: /yo-l -> /yo-l/ (301) ────────────
+  # `trailingSlash: true` bo'lgani uchun ikkala shakl ham 200 qaytarardi —
+  # bu Google uchun dublikat sahifa edi.
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.+)$ /$1/ [R=301,L]
+
+  # ── 5. /yo-l/ -> /yo-l/index.html (ichki rewrite) ──────────────────────
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.+?)/?$ /$1/index.html [L]
+
+  # ── 6. Eski (trailingSlash: false) buildlardan qolgan /yo-l.html holati ─
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+?)/?$ /$1.html [L]
+
+  # ── 7. Qolgani — HAQIQIY 404 ───────────────────────────────────────────
+  # DIQQAT: bu yerga `RewriteRule ^ /404.html [L]` QAYTA QO'YMANG.
+  # U ichki rewrite bo'lgani uchun Apache 200 OK qaytaradi ("soft 404") va
+  # Google mavjud bo'lmagan eski URL'ni indeksda abadiy saqlab qoladi —
+  # aynan shu sabab `airi.uz/uz/institute/` qidiruvda chiqib turgan edi.
+  # Hech qanday qoida yozmasak, Apache tabiiy 404 status beradi va quyidagi
+  # `ErrorDocument` o'sha status bilan 404 sahifasini ko'rsatadi.
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+# Immutable build assetlari — uzoq kesh
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2?|ttf|otf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpe?g|gif|svg|webp|avif|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  # Video va PDF avval umuman keshlanmasdi — `Cache-Control` sarlavhasi yo'q edi.
+  # Bosh sahifadagi hero video 16 MB, `/ishlab-chiqarish/` dagisi 33 MB;
+  # keshsiz ular HAR BIR tashrifda qaytadan yuklanardi. Fayl nomi o'zgarmaguncha
+  # mazmuni ham o'zgarmaydi, shuning uchun uzoq muddat xavfsiz.
+  <FilesMatch "\.(mp4|webm|ogg|mov)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+  <FilesMatch "\.(pdf|docx?|xlsx?|pptx?)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+  # HTML har doim yangilanib tursin, aks holda deploy'dan keyin eski sahifa qoladi
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "(sitemap\.xml|robots\.txt)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE application/xml image/svg+xml
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType application/xml .xml
+  AddType image/svg+xml .svg
+  AddType font/woff2 .woff2
+</IfModule>

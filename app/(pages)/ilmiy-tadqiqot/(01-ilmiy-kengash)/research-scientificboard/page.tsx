@@ -1,0 +1,7 @@
+/** @format */
+
+import { InstituteCouncilAboutPage } from "../_components/council-section-pages";
+
+export default function ScientificBoardPage() {
+  return <InstituteCouncilAboutPage />;
+}

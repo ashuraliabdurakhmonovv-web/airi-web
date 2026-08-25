@@ -1,0 +1,770 @@
+{
+  "/": {
+    "changefreq": "daily",
+    "crumb": {
+      "uz": "Bosh sahifa",
+      "ru": "Главная",
+      "en": "Home"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Raqamli texnologiyalar va sunʼiy intellektni rivojlantirish ilmiy-tadqiqot instituti",
+        "description": "Raqamli texnologiyalar va sunʼiy intellektni rivojlantirish ilmiy-tadqiqot instituti — ilmiy tadqiqotlar, raqamli transformatsiya va amaliy AI yechimlar portali."
+      },
+      "ru": {
+        "title": "НИИ развития цифровых технологий и искусственного интеллекта",
+        "description": "Научно-исследовательский институт развития цифровых технологий и искусственного интеллекта (AIRI, Ташкент) — научные исследования, докторантура, лаборатории и прикладные решения на основе ИИ."
+      },
+      "en": {
+        "title": "Research Institute for the Development of Digital Technologies and Artificial Intelligence",
+        "description": "AIRI is Uzbekistan's state research institute for artificial intelligence and digital technologies — research laboratories, doctoral studies and applied AI solutions."
+      }
+    }
+  },
+  "/umumiy-malumot": {
+    "parent": "/",
+    "changefreq": "weekly",
+    "crumb": {
+      "uz": "Umumiy ma'lumot",
+      "ru": "Общая информация",
+      "en": "General information"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Institut haqida umumiy ma'lumot",
+        "description": "AIRI — Raqamli texnologiyalar va sun'iy intellektni rivojlantirish ilmiy-tadqiqot instituti: tarixi, tuzilmasi, jamoasi, hamkorlari va ochiq ma'lumotlari."
+      },
+      "ru": {
+        "title": "Общая информация об институте",
+        "description": "НИИ развития цифровых технологий и искусственного интеллекта: история, структура, коллектив, партнёры и открытые данные."
+      },
+      "en": {
+        "title": "General information about the institute",
+        "description": "The Research Institute for the Development of Digital Technologies and Artificial Intelligence: history, structure, team, partners and open data."
+      }
+    }
+  },
+  "/ilmiy-tadqiqot": {
+    "parent": "/",
+    "changefreq": "weekly",
+    "crumb": {
+      "uz": "Ilmiy tadqiqot",
+      "ru": "Научные исследования",
+      "en": "Research"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Ilmiy tadqiqotlar — sun'iy intellekt va raqamli texnologiyalar",
+        "description": "AIRI instituti ilmiy tadqiqot yo'nalishlari: sun'iy intellekt, mashinaviy o'qitish, tabiiy tilni qayta ishlash, ilmiy laboratoriyalar, doktorantura va ilmiy kengash faoliyati."
+      },
+      "ru": {
+        "title": "Научные исследования — искусственный интеллект и цифровые технологии",
+        "description": "Направления научных исследований института: искусственный интеллект, машинное обучение, обработка естественного языка, научные лаборатории, докторантура и учёный совет."
+      },
+      "en": {
+        "title": "Scientific research — artificial intelligence and digital technologies",
+        "description": "The institute's research directions: artificial intelligence, machine learning, natural language processing, research laboratories, doctoral studies and the scientific council."
+      }
+    }
+  },
+  "/ishlab-chiqarish": {
+    "parent": "/",
+    "changefreq": "weekly",
+    "crumb": {
+      "uz": "Ishlab chiqarish",
+      "ru": "Производство",
+      "en": "Production"
+    },
+    "locales": [
+      "uz"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Ishlab chiqarish — amaliy sun'iy intellekt yechimlari",
+        "description": "AIRI ishlab chiqarish bo'linmasi: amaliy sun'iy intellekt mahsulotlari, raqamli platformalar, buyurtma loyihalar va ularni yaratgan jamoa."
+      },
+      "ru": {
+        "title": "Производство — прикладные решения на основе искусственного интеллекта",
+        "description": "Производственное подразделение института: прикладные продукты на основе ИИ, цифровые платформы, заказные проекты и команда, которая их создаёт."
+      },
+      "en": {
+        "title": "Production — applied artificial intelligence solutions",
+        "description": "The institute's production division: applied AI products, digital platforms, custom projects and the team behind them."
+      }
+    }
+  },
+  "/umumiy-malumot/institute-abouttheinstitute": {
+    "parent": "/umumiy-malumot",
+    "changefreq": "monthly",
+    "crumb": {
+      "uz": "Institut haqida",
+      "ru": "Об институте",
+      "en": "About the institute"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Institut haqida",
+        "description": "AIRI ning maqsad va vazifalari, ilmiy yo'nalishlari hamda O'zbekistonda sun'iy intellektni rivojlantirishdagi o'rni."
+      },
+      "ru": {
+        "title": "Об институте искусственного интеллекта",
+        "description": "Цели и задачи НИИ развития цифровых технологий и искусственного интеллекта, научные направления и роль института в развитии ИИ в Узбекистане."
+      },
+      "en": {
+        "title": "About the AI research institute",
+        "description": "The mission and objectives of the Research Institute for the Development of Digital Technologies and Artificial Intelligence, its research directions and its role in advancing AI in Uzbekistan."
+      }
+    }
+  },
+  "/umumiy-malumot/institute-structureofinstitute": {
+    "parent": "/umumiy-malumot",
+    "changefreq": "monthly",
+    "crumb": {
+      "uz": "Institut tuzilmasi",
+      "ru": "Структура",
+      "en": "Structure"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Institut tuzilmasi",
+        "description": "AIRI ning tashkiliy tuzilmasi: bo'limlar, ilmiy laboratoriyalar va boshqaruv organlari."
+      },
+      "ru": {
+        "title": "Структура института",
+        "description": "Организационная структура НИИ развития цифровых технологий и искусственного интеллекта: отделы, научные лаборатории и органы управления."
+      },
+      "en": {
+        "title": "Structure of the institute",
+        "description": "The organisational structure of the institute: departments, research laboratories and governing bodies."
+      }
+    }
+  },
+  "/umumiy-malumot/institute-instituteteam": {
+    "parent": "/umumiy-malumot",
+    "changefreq": "monthly",
+    "crumb": {
+      "uz": "Institut jamoasi",
+      "ru": "Руководство",
+      "en": "Team"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Institut jamoasi",
+        "description": "AIRI rahbariyati, ilmiy xodimlari va bo'lim mudirlari — institut jamoasi bilan tanishing."
+      },
+      "ru": {
+        "title": "Руководство и коллектив института",
+        "description": "Руководство, научные сотрудники и заведующие отделами НИИ развития цифровых технологий и искусственного интеллекта."
+      },
+      "en": {
+        "title": "Institute team",
+        "description": "The management, research staff and department heads of the AI research institute."
+      }
+    }
+  },
+  "/umumiy-malumot/institute-teachers": {
+    "parent": "/umumiy-malumot",
+    "changefreq": "monthly",
+    "crumb": {
+      "uz": "Professor-o'qituvchilar",
+      "ru": "Преподаватели",
+      "en": "Faculty"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Professor-o'qituvchilar",
+        "description": "AIRI professor-o'qituvchilari va ilmiy rahbarlari: ilmiy darajalari va tadqiqot yo'nalishlari."
+      },
+      "ru": {
+        "title": "Преподаватели и научные руководители",
+        "description": "Профессорско-преподавательский состав и научные руководители института: учёные степени и направления исследований."
+      },
+      "en": {
+        "title": "Faculty and academic supervisors",
+        "description": "The institute's professors and academic supervisors: their degrees and research directions."
+      }
+    }
+  },
+  "/umumiy-malumot/history": {
+    "parent": "/umumiy-malumot",
+    "changefreq": "yearly",
+    "crumb": {
+      "uz": "Institut tarixi",
+      "ru": "История",
+      "en": "History"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Institut tarixi",
+        "description": "Kibernetika institutidan AIRI gacha: institutning tashkil topishi, rivojlanish bosqichlari va ilmiy maktablari."
+      },
+      "ru": {
+        "title": "История института",
+        "description": "От Института кибернетики до AIRI: основание института, этапы развития и его научные школы."
+      },
+      "en": {
+        "title": "History of the institute",
+        "description": "From the Institute of Cybernetics to AIRI: the institute's founding, stages of development and its scientific schools."
+      }
+    }
+  },
+  "/umumiy-malumot/partners": {
+    "parent": "/umumiy-malumot",
+    "changefreq": "monthly",
+    "crumb": {
+      "uz": "Hamkorlar",
+      "ru": "Партнёры",
+      "en": "Partners"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Hamkorlar",
+        "description": "AIRI ning davlat organlari, universitetlar va texnologik kompaniyalar bilan hamkorlik aloqalari."
+      },
+      "ru": {
+        "title": "Партнёры института",
+        "description": "Сотрудничество института с государственными органами, университетами и технологическими компаниями."
+      },
+      "en": {
+        "title": "Partners",
+        "description": "The institute's cooperation with government bodies, universities and technology companies."
+      }
+    }
+  },
+  "/umumiy-malumot/opendata-vacancies": {
+    "parent": "/umumiy-malumot",
+    "changefreq": "weekly",
+    "crumb": {
+      "uz": "Bo'sh ish o'rinlari",
+      "ru": "Вакансии",
+      "en": "Vacancies"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Bo'sh ish o'rinlari",
+        "description": "AIRI dagi ochiq vakansiyalar: ilmiy xodim, dasturchi va boshqa lavozimlar bo'yicha talab va shartlar."
+      },
+      "ru": {
+        "title": "Вакансии института",
+        "description": "Открытые вакансии НИИ развития цифровых технологий и искусственного интеллекта: научные сотрудники, разработчики и другие должности."
+      },
+      "en": {
+        "title": "Vacancies",
+        "description": "Open positions at the AI research institute: researchers, developers and other roles, with requirements and conditions."
+      }
+    }
+  },
+  "/umumiy-malumot/faq": {
+    "parent": "/umumiy-malumot",
+    "changefreq": "monthly",
+    "crumb": {
+      "uz": "Savol-javob",
+      "ru": "Вопросы и ответы",
+      "en": "FAQ"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Ko'p so'raladigan savollar",
+        "description": "AIRI faoliyati, doktorantura, hamkorlik, ilmiy loyihalar va sun'iy intellekt yechimlari bo'yicha ko'p so'raladigan savollarga javoblar."
+      },
+      "ru": {
+        "title": "Часто задаваемые вопросы",
+        "description": "Ответы на частые вопросы о деятельности института, докторантуре, сотрудничестве, научных проектах и решениях на основе искусственного интеллекта."
+      },
+      "en": {
+        "title": "Frequently asked questions",
+        "description": "Answers to common questions about the institute's activities, doctoral studies, cooperation, research projects and AI solutions."
+      }
+    }
+  },
+  "/umumiy-malumot/news": {
+    "parent": "/umumiy-malumot",
+    "changefreq": "daily",
+    "crumb": {
+      "uz": "Yangiliklar",
+      "ru": "Новости",
+      "en": "News"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Yangiliklar",
+        "description": "AIRI yangiliklari: ilmiy tadbirlar, xalqaro hamkorlik, loyihalar va institut hayotidagi voqealar."
+      },
+      "ru": {
+        "title": "Новости института",
+        "description": "Новости НИИ развития цифровых технологий и искусственного интеллекта: научные мероприятия, международное сотрудничество, проекты и события института."
+      },
+      "en": {
+        "title": "News",
+        "description": "News from the AI research institute: scientific events, international cooperation, projects and institute life."
+      }
+    }
+  },
+  "/ilmiy-tadqiqot/research-laboratories": {
+    "parent": "/ilmiy-tadqiqot",
+    "changefreq": "monthly",
+    "crumb": {
+      "uz": "Ilmiy laboratoriyalar",
+      "ru": "Лаборатории",
+      "en": "Laboratories"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Ilmiy laboratoriyalar",
+        "description": "Institutning ilmiy laboratoriyalari: sun'iy intellekt va mashinaviy o'qitish, tabiiy tilni qayta ishlash, biometrik tizimlar, timsollarni tanib olish va boshqalar."
+      },
+      "ru": {
+        "title": "Научные лаборатории искусственного интеллекта",
+        "description": "Лаборатории института: искусственный интеллект и машинное обучение, обработка естественного языка, биометрические системы, распознавание образов и другие направления."
+      },
+      "en": {
+        "title": "AI research laboratories",
+        "description": "The institute's laboratories: artificial intelligence and machine learning, natural language processing, biometric systems, pattern recognition and more."
+      }
+    }
+  },
+  "/ilmiy-tadqiqot/research-doctorate": {
+    "parent": "/ilmiy-tadqiqot",
+    "changefreq": "monthly",
+    "crumb": {
+      "uz": "Doktorantura",
+      "ru": "Докторантура",
+      "en": "Doctoral studies"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Doktorantura — sun'iy intellekt yo'nalishi bo'yicha PhD va DSc",
+        "description": "AIRI da tayanch doktorantura (PhD) va doktorantura (DSc) bo'yicha qabul shartlari, ilmiy yo'nalishlar va topshiriladigan hujjatlar ro'yxati."
+      },
+      "ru": {
+        "title": "Докторантура по искусственному интеллекту — PhD и DSc",
+        "description": "Условия приёма в базовую докторантуру (PhD) и докторантуру (DSc) института, научные специальности и перечень необходимых документов."
+      },
+      "en": {
+        "title": "Doctoral studies in artificial intelligence — PhD and DSc",
+        "description": "Admission requirements for PhD and DSc programmes at the institute, research specialisations and the list of required documents."
+      }
+    }
+  },
+  "/ilmiy-tadqiqot/research-scientificboard": {
+    "parent": "/ilmiy-tadqiqot",
+    "changefreq": "monthly",
+    "crumb": {
+      "uz": "Institut Ilmiy kengashi",
+      "ru": "Учёный совет",
+      "en": "Scientific council"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Institut Ilmiy kengashi",
+        "description": "Institut Ilmiy kengashi tarkibi, vakolatlari va ilmiy-tashkiliy faoliyati haqida rasmiy ma'lumot."
+      },
+      "ru": {
+        "title": "Учёный совет института",
+        "description": "Состав, полномочия и научно-организационная деятельность учёного совета НИИ развития цифровых технологий и искусственного интеллекта."
+      },
+      "en": {
+        "title": "Scientific council",
+        "description": "The composition, powers and organisational activities of the institute's scientific council."
+      }
+    }
+  },
+  "/ilmiy-tadqiqot/research-conferences": {
+    "parent": "/ilmiy-tadqiqot",
+    "changefreq": "monthly",
+    "crumb": {
+      "uz": "Konferensiyalar",
+      "ru": "Конференции",
+      "en": "Conferences"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Ilmiy konferensiyalar",
+        "description": "AIRI tashkil etadigan va ishtirok etadigan xalqaro hamda respublika ilmiy-amaliy konferensiyalari."
+      },
+      "ru": {
+        "title": "Научные конференции",
+        "description": "Международные и республиканские научно-практические конференции, организуемые институтом, и участие в них."
+      },
+      "en": {
+        "title": "Scientific conferences",
+        "description": "International and national scientific-practical conferences organised by, and attended by, the institute."
+      }
+    }
+  },
+  "/ilmiy-tadqiqot/research-scientificboard/about": {
+    "parent": "/ilmiy-tadqiqot/research-scientificboard",
+    "changefreq": "monthly",
+    "locales": ["uz", "ru", "en"],
+    "crumb": {
+      "uz": "Kengash haqida",
+      "ru": "О совете",
+      "en": "About the council"
+    },
+    "meta": {
+      "uz": {
+        "title": "Institut Ilmiy kengashi — Kengash haqida",
+        "description": "AIRI Institut Ilmiy kengashining vazifalari, vakolatlari va ilmiy-tashkiliy faoliyati haqida ma’lumot."
+      },
+      "ru": {
+        "title": "Учёный совет института — О совете",
+        "description": "Задачи, полномочия и научно-организационная деятельность учёного совета AIRI."
+      },
+      "en": {
+        "title": "Institute Scientific Council — About",
+        "description": "The responsibilities, authority and scientific-organisational activity of the AIRI Institute Scientific Council."
+      }
+    }
+  },
+  "/ilmiy-tadqiqot/research-scientificboard/composition": {
+    "parent": "/ilmiy-tadqiqot/research-scientificboard",
+    "changefreq": "monthly",
+    "locales": ["uz", "ru", "en"],
+    "crumb": {
+      "uz": "Kengash tarkibi",
+      "ru": "Состав совета",
+      "en": "Council membership"
+    },
+    "meta": {
+      "uz": {
+        "title": "Institut Ilmiy kengashi tarkibi",
+        "description": "AIRI Institut Ilmiy kengashi raisi, kotibi va a’zolari tarkibi."
+      },
+      "ru": {
+        "title": "Состав учёного совета института",
+        "description": "Председатель, секретарь и члены учёного совета AIRI."
+      },
+      "en": {
+        "title": "Institute Scientific Council membership",
+        "description": "The chair, secretary and members of the AIRI Institute Scientific Council."
+      }
+    }
+  },
+  "/ilmiy-tadqiqot/degree-awarding-council/about": {
+    "parent": "/ilmiy-tadqiqot/degree-awarding-council",
+    "changefreq": "monthly",
+    "locales": ["uz", "ru", "en"],
+    "crumb": {
+      "uz": "Kengash haqida",
+      "ru": "О совете",
+      "en": "About the council"
+    },
+    "meta": {
+      "uz": {
+        "title": "Ilmiy darajalar beruvchi kengash — Kengash haqida",
+        "description": "AIRI huzuridagi ilmiy darajalar beruvchi kengashning vazifalari, kodi va ixtisoslik yo‘nalishlari."
+      },
+      "ru": {
+        "title": "Совет по присуждению учёных степеней — О совете",
+        "description": "Задачи, шифр и специальности совета AIRI по присуждению учёных степеней."
+      },
+      "en": {
+        "title": "Degree-awarding council — About",
+        "description": "The responsibilities, code and specialties of the AIRI degree-awarding council."
+      }
+    }
+  },
+  "/ilmiy-tadqiqot/degree-awarding-council/composition": {
+    "parent": "/ilmiy-tadqiqot/degree-awarding-council",
+    "changefreq": "monthly",
+    "locales": ["uz", "ru", "en"],
+    "crumb": {
+      "uz": "Kengash tarkibi",
+      "ru": "Состав совета",
+      "en": "Council membership"
+    },
+    "meta": {
+      "uz": {
+        "title": "Ilmiy darajalar beruvchi kengash tarkibi",
+        "description": "AIRI huzuridagi ilmiy darajalar beruvchi kengash rahbariyati va a’zolari tarkibi."
+      },
+      "ru": {
+        "title": "Состав совета по присуждению учёных степеней",
+        "description": "Руководство и члены совета AIRI по присуждению учёных степеней."
+      },
+      "en": {
+        "title": "Degree-awarding council membership",
+        "description": "The leadership and members of the AIRI degree-awarding council."
+      }
+    }
+  },
+  "/umumiy-malumot/institute-graduates": {
+    "parent": "/umumiy-malumot",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "Bitiruvchilar",
+      "ru": "Выпускники",
+      "en": "Graduates"
+    }
+  },
+  "/umumiy-malumot/institute-talentedyouth": {
+    "parent": "/umumiy-malumot",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "Iqtidorli yoshlar",
+      "ru": "Талантливая молодёжь",
+      "en": "Talented youth"
+    }
+  },
+  "/umumiy-malumot/institute-eventcalendar": {
+    "parent": "/umumiy-malumot",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "Tadbirlar taqvimi",
+      "ru": "Календарь мероприятий",
+      "en": "Event calendar"
+    }
+  },
+  "/umumiy-malumot/institute-internaldocuments": {
+    "parent": "/umumiy-malumot",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "Ichki hujjatlar",
+      "ru": "Внутренние документы",
+      "en": "Internal documents"
+    }
+  },
+  "/umumiy-malumot/research-internationalrelationships": {
+    "parent": "/umumiy-malumot",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "Xalqaro aloqalar",
+      "ru": "Международные связи",
+      "en": "International relations"
+    }
+  },
+  "/umumiy-malumot/opendata-requisitesoftheinstitute": {
+    "parent": "/umumiy-malumot",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "Institut rekvizitlari",
+      "ru": "Реквизиты института",
+      "en": "Institute requisites"
+    }
+  },
+  "/umumiy-malumot/opendata-managementreceptiondays": {
+    "parent": "/umumiy-malumot",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "Qabul kunlari",
+      "ru": "Дни приёма",
+      "en": "Reception days"
+    }
+  },
+  "/umumiy-malumot/generalinformation-statesymbols": {
+    "parent": "/umumiy-malumot",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "Davlat ramzlari",
+      "ru": "Государственные символы",
+      "en": "State symbols"
+    }
+  },
+  "/ilmiy-tadqiqot/degree-awarding-council": {
+    "parent": "/ilmiy-tadqiqot",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "Ilmiy darajalar beruvchi kengash",
+      "ru": "Совет по присуждению учёных степеней",
+      "en": "Degree-awarding council"
+    }
+  },
+  "/ilmiy-tadqiqot/interlaboratory-seminars": {
+    "parent": "/ilmiy-tadqiqot/degree-awarding-council",
+    "changefreq": "monthly",
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "crumb": {
+      "uz": "Laboratoriyalararo ilmiy seminar",
+      "ru": "Межлабораторный научный семинар",
+      "en": "Interlaboratory scientific seminar"
+    },
+    "meta": {
+      "uz": {
+        "title": "Laboratoriyalararo ilmiy seminar",
+        "description": "AIRI ilmiy darajalar beruvchi kengashi tarkibidagi laboratoriyalararo ilmiy seminarlar, ixtisoslik yo‘nalishlari va tasdiqlangan a’zolar tarkibi."
+      },
+      "ru": {
+        "title": "Межлабораторный научный семинар",
+        "description": "Межлабораторные научные семинары при совете AIRI по присуждению учёных степеней, специальности и утверждённый состав участников."
+      },
+      "en": {
+        "title": "Interlaboratory Scientific Seminar",
+        "description": "Interlaboratory scientific seminars under the AIRI degree-awarding council, their specialties, and approved membership."
+      }
+    }
+  },
+  "/ilmiy-tadqiqot/seminars": {
+    "parent": "/ilmiy-tadqiqot",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "Seminarlar",
+      "ru": "Семинары",
+      "en": "Seminars"
+    }
+  },
+  "/ilmiy-tadqiqot/announcements": {
+    "parent": "/ilmiy-tadqiqot",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "E'lonlar",
+      "ru": "Объявления",
+      "en": "Announcements"
+    }
+  },
+  "/ishlab-chiqarish/projects": {
+    "parent": "/ishlab-chiqarish",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "Loyihalar",
+      "ru": "Проекты",
+      "en": "Projects"
+    }
+  },
+  "/ishlab-chiqarish/team": {
+    "parent": "/ishlab-chiqarish",
+    "locales": [
+      "uz"
+    ],
+    "crumb": {
+      "uz": "Jamoa",
+      "ru": "Команда",
+      "en": "Team"
+    }
+  },
+  "/boglanish": {
+    "parent": "/",
+    "changefreq": "yearly",
+    "crumb": {
+      "uz": "Bog'lanish",
+      "ru": "Контакты",
+      "en": "Contact"
+    },
+    "locales": [
+      "uz",
+      "ru",
+      "en"
+    ],
+    "meta": {
+      "uz": {
+        "title": "Bog'lanish",
+        "description": "AIRI instituti bilan bog'lanish: telefon, elektron pochta, manzil, ish vaqti va murojaat yuborish shakli."
+      },
+      "ru": {
+        "title": "Контакты института",
+        "description": "Как связаться с НИИ развития цифровых технологий и искусственного интеллекта: телефон, электронная почта, адрес в Ташкенте, часы работы и форма обращения."
+      },
+      "en": {
+        "title": "Contact",
+        "description": "How to reach the AI research institute: phone, email, address in Tashkent, working hours and an enquiry form."
+      }
+    }
+  }
+}
