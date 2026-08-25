@@ -9,7 +9,7 @@ import enDict from "@/i18n/dictionaries/en";
 import type { RouteLocale } from "@/config/pages";
 import { localePath } from "@/config/pages";
 import { getStaticNewsPage } from "@/lib/news/static-news-repository";
-import { NEWS_CATEGORIES, categoryToQuery, localizedText, newsHref, newsImage } from "@/lib/news";
+import { NEWS_CATEGORIES, categoryToQuery, localizedCategory, localizedText, newsHref, newsImage } from "@/lib/news";
 import { PAGE_SIZE, POPULAR_CATEGORIES } from "./news-constants";
 
 const DICTIONARIES = { uz: uzDict, ru: ruDict, en: enDict };
@@ -113,7 +113,7 @@ export default function NewsStaticList({ locale = "uz" }: { locale?: RouteLocale
                       <div className="mb-2 flex flex-wrap items-center gap-3 text-xs font-semibold text-gray-500">
                         <span className="inline-flex items-center gap-1.5 text-blue-600">
                           <Tag className="h-3.5 w-3.5" />
-                          {news.category}
+                          {localizedCategory(news.category, locale)}
                         </span>
                         {news.displayDate ? (
                           <time dateTime={news.publishedAt || undefined}>

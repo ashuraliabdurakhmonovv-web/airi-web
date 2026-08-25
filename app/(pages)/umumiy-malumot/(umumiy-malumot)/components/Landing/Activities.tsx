@@ -38,15 +38,15 @@ export default function Activities() {
         </div>
       </div>
 
-      <div className="bg-[#080c14] grid gap-4 p-4 text-white shadow-xl shadow-[#604eff]/20 sm:p-5 lg:h-120 lg:grid-cols-4 lg:p-6">
+      <div className="activities-glass grid gap-4 rounded-2xl border border-white/10 bg-[#0b2c71] p-4 text-white shadow-xl shadow-[#0b2c71]/25 sm:p-5 lg:min-h-120 lg:grid-cols-4 lg:p-6">
         {activities.map((activity, index) => {
           const Icon = activity.icon;
 
           return (
             <article
               key={activity.key}
-              className="flex h-full flex-col px-3 py-4 transition-colors hover:bg-white/10 sm:px-4 lg:py-5">
-              <div className="mb-4 flex items-center gap-2 rounded-full bg-white/15 p-1 pr-4">
+              className="activity-glass-card flex h-full flex-col rounded-xl border border-transparent px-3 py-4 transition-all duration-300 hover:bg-white/10 sm:px-4 lg:py-5">
+              <div className="activity-glass-heading mb-4 flex items-center gap-2 rounded-full bg-white/15 p-1 pr-4">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/30 text-sm font-bold text-white">
                   {index + 1}
                 </span>

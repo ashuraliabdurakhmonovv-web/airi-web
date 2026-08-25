@@ -131,8 +131,6 @@ const Conferences = () => {
                     {conf.link && conf.link !== "#" ? (
                       <Link
                         href={conf.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="inline-flex w-full items-center justify-center bg-slate-950 px-5 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#604eff]"
                       >
                         {t.common.details}

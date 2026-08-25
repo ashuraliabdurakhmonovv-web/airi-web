@@ -58,7 +58,7 @@ const contactFields: Field[] = [
 ];
 
 const inputClassName =
-  "h-13 w-full border border-white/15 bg-white/[0.03] px-4 text-[15px] text-white outline-none transition-colors placeholder:text-white/28 focus:border-white/55 focus:bg-white/[0.06]";
+  "h-13 w-full border border-white/20 bg-white/[0.055] px-4 text-[15px] text-white outline-none transition-colors placeholder:text-white/48 focus:border-[#54a2ff]/75 focus:bg-white/[0.08]";
 
 export function ContactForm() {
   const { locale } = useLocale();
@@ -103,7 +103,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="grid gap-10">
       {/* Murojaat turi */}
       <fieldset className="grid gap-4">
-        <legend className="mb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+        <legend className="mb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-white/65">
           {copy.requestType}
         </legend>
         <div className="flex flex-wrap gap-2.5">
@@ -137,10 +137,10 @@ export function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-3">
         {identityFields.map((field, index) => (
           <label key={field.name} className="grid gap-2.5">
-            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/65">
               {copy.fields[index].label}
               {!field.required && (
-                <span className="ml-2 normal-case tracking-normal text-white/25">
+                <span className="ml-2 normal-case tracking-normal text-white/45">
                   {copy.optional}
                 </span>
               )}
@@ -161,10 +161,10 @@ export function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         {contactFields.map((field, index) => (
           <label key={field.name} className="grid gap-2.5">
-            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/65">
               {copy.fields[index + 3].label}
               {!field.required && (
-                <span className="ml-2 normal-case tracking-normal text-white/25">
+                <span className="ml-2 normal-case tracking-normal text-white/45">
                   {copy.optional}
                 </span>
               )}
@@ -183,7 +183,7 @@ export function ContactForm() {
 
       {/* Xabar */}
       <label className="grid gap-2.5">
-        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/65">
           {copy.message}
         </span>
         <textarea
@@ -191,7 +191,7 @@ export function ContactForm() {
           required
           rows={7}
           placeholder={copy.messagePlaceholder}
-          className="w-full resize-y border border-white/15 bg-white/[0.03] p-4 text-[15px] leading-relaxed text-white outline-none transition-colors placeholder:text-white/28 focus:border-white/55 focus:bg-white/[0.06]"
+          className="w-full resize-y border border-white/20 bg-white/[0.055] p-4 text-[15px] leading-relaxed text-white outline-none transition-colors placeholder:text-white/48 focus:border-[#54a2ff]/75 focus:bg-white/[0.08]"
         />
       </label>
 
@@ -211,7 +211,7 @@ export function ContactForm() {
         )}
       </div>
 
-      <p className="border-t border-white/12 pt-6 text-sm leading-relaxed text-white/45">
+      <p className="border-t border-white/12 pt-6 text-sm leading-relaxed text-white/60">
         {copy.note}
       </p>
     </form>

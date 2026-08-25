@@ -64,7 +64,7 @@ export default function OrganizationJsonLd() {
           "https://t.me/airiuz",
           "https://www.instagram.com/airi.uz/",
           "https://www.linkedin.com/company/airiuz",
-          "https://youtube.com/@airi_uz",
+          "https://www.youtube.com/@airi_uz",
         ],
       },
       {

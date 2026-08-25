@@ -373,11 +373,12 @@ body {
 }
 
 .theme-dark {
-  --bg-primary: #1f2937;
-  --bg-secondary: #111827;
+  color-scheme: dark;
+  --bg-primary: #0b1220;
+  --bg-secondary: #111b2b;
   --text-primary: #f9fafb;
-  --text-secondary: #d1d5db;
-  --border-color: #374151;
+  --text-secondary: #cbd5e1;
+  --border-color: #2b3a50;
 
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
@@ -407,6 +408,347 @@ body {
 
 .theme-dark * {
   border-color: var(--border-color);
+}
+
+/* Universal compatibility layer for pages built with light Tailwind tokens. */
+.theme-dark [class*="bg-[#f5"],
+.theme-dark [class*="bg-[#f6"],
+.theme-dark [class*="bg-[#f7"],
+.theme-dark [class*="bg-[#f8"],
+.theme-dark [class*="bg-[#fb"],
+.theme-dark [class~="bg-gray-50"],
+.theme-dark [class~="bg-gray-100"],
+.theme-dark [class~="bg-slate-50"],
+.theme-dark [class~="bg-slate-100"] {
+  background-color: #0b1220 !important;
+}
+
+.theme-dark [class~="bg-white"],
+.theme-dark [class~="bg-white/95"],
+.theme-dark [class~="bg-white/90"],
+.theme-dark [class~="bg-white/88"],
+.theme-dark [class~="bg-white/86"],
+.theme-dark [class~="bg-white/85"],
+.theme-dark [class~="bg-white/82"],
+.theme-dark [class~="bg-white/80"],
+.theme-dark [class~="bg-white/78"],
+.theme-dark [class~="bg-white/75"],
+.theme-dark [class~="bg-white/72"],
+.theme-dark [class~="bg-white/70"],
+.theme-dark [class~="bg-white/68"],
+.theme-dark [class~="bg-white/60"] {
+  background-color: rgb(23 34 53 / 0.94) !important;
+}
+
+/* The portal landing is intentionally cinematic in every display mode. */
+.theme-dark .bg-black,
+.theme-dark section.bg-black {
+  background-color: #000 !important;
+}
+
+.theme-dark [class~="text-black"],
+.theme-dark [class~="text-gray-950"],
+.theme-dark [class~="text-gray-900"],
+.theme-dark [class~="text-gray-800"],
+.theme-dark [class~="text-slate-950"],
+.theme-dark [class~="text-slate-900"],
+.theme-dark [class~="text-slate-800"] {
+  color: #f8fafc !important;
+}
+
+.theme-dark [class~="text-gray-700"],
+.theme-dark [class~="text-gray-600"],
+.theme-dark [class~="text-gray-500"],
+.theme-dark [class~="text-slate-700"],
+.theme-dark [class~="text-slate-600"],
+.theme-dark [class~="text-slate-500"] {
+  color: #cbd5e1 !important;
+}
+
+.theme-dark [class~="text-gray-400"],
+.theme-dark [class~="text-slate-400"],
+.theme-dark [class~="text-neutral-500"],
+.theme-dark [class~="text-neutral-600"],
+.theme-dark [class~="text-neutral-700"] {
+  color: #94a3b8 !important;
+}
+
+.theme-dark [class~="text-neutral-950"] {
+  color: #f8fafc !important;
+}
+
+.theme-dark [class*="border-gray-"],
+.theme-dark [class*="border-slate-"],
+.theme-dark [class*="border-blue-100"] {
+  border-color: #2b3a50 !important;
+}
+
+.theme-dark input,
+.theme-dark textarea,
+.theme-dark select {
+  border-color: #334155 !important;
+  background-color: #111b2b !important;
+  color: #f8fafc !important;
+}
+
+.theme-dark input::placeholder,
+.theme-dark textarea::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1;
+}
+
+.theme-dark table {
+  color: #e2e8f0;
+}
+
+.theme-dark thead,
+.theme-dark tbody,
+.theme-dark tr {
+  border-color: #2b3a50 !important;
+}
+
+.theme-dark thead [class*="bg-slate-"],
+.theme-dark thead [class*="bg-gray-"] {
+  background-color: #172235 !important;
+}
+
+.theme-dark [class~="bg-blue-50"],
+.theme-dark [class~="bg-cyan-50"] {
+  background-color: rgb(8 47 73 / 0.38) !important;
+}
+
+.theme-dark [class~="bg-emerald-50"],
+.theme-dark [class~="bg-green-50"] {
+  background-color: rgb(6 78 59 / 0.3) !important;
+}
+
+.theme-dark [class~="bg-amber-50"],
+.theme-dark [class~="bg-yellow-50"] {
+  background-color: rgb(120 53 15 / 0.28) !important;
+}
+
+.theme-dark [class~="bg-violet-50"],
+.theme-dark [class~="bg-purple-50"],
+.theme-dark [class~="bg-rose-50"],
+.theme-dark [class~="bg-red-50"] {
+  background-color: rgb(76 29 149 / 0.25) !important;
+}
+
+.theme-dark [class~="text-cyan-950"],
+.theme-dark [class~="text-cyan-900"],
+.theme-dark [class~="text-blue-900"] {
+  color: #bae6fd !important;
+}
+
+.theme-dark [role="dialog"],
+.theme-dark [role="menu"],
+.theme-dark [data-radix-popper-content-wrapper] > * {
+  border-color: #334155 !important;
+  background-color: #111b2b;
+  color: #f8fafc;
+}
+
+.theme-dark .shadow-sm,
+.theme-dark .shadow-md,
+.theme-dark .shadow-lg,
+.theme-dark .shadow-xl,
+.theme-dark .shadow-2xl {
+  --tw-shadow-color: rgb(0 0 0 / 0.28);
+}
+
+/* Dark theme surfaces and theme-specific photography. */
+.theme-image-dark {
+  display: none;
+}
+
+.theme-dark .theme-image-light {
+  display: none;
+}
+
+.theme-dark .theme-image-dark {
+  display: block;
+}
+
+.theme-dark [data-research-hero],
+.theme-dark .airi-hero,
+.theme-dark #haqida,
+.theme-dark .research-cta,
+.theme-dark .doctorate-page,
+.theme-dark .doctorate-header {
+  background-color: #0b1220 !important;
+  color: #f8fafc !important;
+}
+
+.theme-dark .hero-reading-overlay {
+  background: rgb(11 18 32 / 0.82) !important;
+}
+
+.theme-dark .hero-edge-overlay {
+  background: linear-gradient(to right, #0b1220, rgb(11 18 32 / 0.72), transparent) !important;
+}
+
+.theme-dark .hero-right-overlay {
+  background: linear-gradient(to left, rgb(11 18 32 / 0.2), transparent) !important;
+}
+
+.theme-dark .about-left-overlay {
+  background: linear-gradient(to right, rgb(11 18 32 / 0.4), transparent) !important;
+}
+
+.theme-dark .about-right-overlay {
+  background: linear-gradient(to left, #0b1220, rgb(11 18 32 / 0.78), transparent) !important;
+}
+
+.theme-dark .about-bottom-overlay {
+  background: linear-gradient(to top, #0b1220, transparent) !important;
+}
+
+.theme-dark .cta-reading-overlay {
+  background: linear-gradient(to right, #0b1220 0%, rgb(11 18 32 / 0.94) 48%, transparent 78%) !important;
+}
+
+.theme-dark .cta-soft-overlay {
+  background: linear-gradient(to top, rgb(2 6 23 / 0.62), transparent, rgb(2 6 23 / 0.12)) !important;
+}
+
+.theme-dark .text-slate-950,
+.theme-dark .text-slate-900 {
+  color: #f8fafc !important;
+}
+
+.theme-dark .text-slate-700,
+.theme-dark .text-slate-600,
+.theme-dark .text-slate-500 {
+  color: #cbd5e1 !important;
+}
+
+.theme-dark .bg-white,
+.theme-dark .bg-white\/80,
+.theme-dark .bg-white\/82,
+.theme-dark .bg-white\/86,
+.theme-dark .bg-white\/88 {
+  background-color: rgb(23 34 53 / 0.94) !important;
+}
+
+.theme-dark .doctorate-page > section:last-of-type {
+  background-color: #0b1220;
+}
+
+.theme-dark .doctorate-card,
+.theme-dark .doctorate-header .bg-white {
+  border-color: #334155 !important;
+  background: linear-gradient(145deg, #172235, #111827) !important;
+  box-shadow: 0 18px 46px rgb(0 0 0 / 0.2);
+}
+
+.theme-dark .doctorate-card .bg-emerald-50 {
+  border-color: rgb(52 211 153 / 0.32) !important;
+  background-color: rgb(6 78 59 / 0.25) !important;
+  color: #6ee7b7 !important;
+}
+
+.theme-dark .doctorate-aside {
+  border-color: #334155 !important;
+  background: linear-gradient(155deg, #080f1e, #0f1b30) !important;
+}
+
+/* General information landing and the Scientific potential section. */
+.theme-dark .general-landing,
+.theme-dark .general-landing-sections,
+.theme-dark .professor-highlight {
+  background-color: #0b1220 !important;
+  background-image: linear-gradient(to bottom, #0b1220, #111b2b, #0b1220) !important;
+  color: #f8fafc;
+}
+
+.theme-dark .professor-institute-card,
+.theme-dark .professor-bio-card {
+  border-color: #334155 !important;
+  background: linear-gradient(145deg, #172235, #111827) !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 20px 52px rgb(0 0 0 / 0.22);
+}
+
+.theme-dark .professor-stat-card {
+  border: 1px solid #334155;
+  background-color: #1b2940 !important;
+}
+
+.theme-dark .professor-highlight .airi-section-copy {
+  color: #cbd5e1 !important;
+}
+
+/* Transparent activity cards on the general landing in dark mode. */
+.theme-dark .activities-glass {
+  border-color: rgb(148 163 184 / 0.2) !important;
+  background:
+    radial-gradient(circle at 18% 15%, rgb(45 212 191 / 0.08), transparent 34%),
+    radial-gradient(circle at 82% 28%, rgb(84 162 255 / 0.12), transparent 38%),
+    rgb(8 15 28 / 0.58) !important;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 0.24) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.theme-dark .activity-glass-card {
+  border-color: rgb(148 163 184 / 0.14) !important;
+  background-color: rgb(255 255 255 / 0.035) !important;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.035);
+}
+
+.theme-dark .activity-glass-card:hover {
+  border-color: rgb(84 162 255 / 0.35) !important;
+  background-color: rgb(255 255 255 / 0.075) !important;
+}
+
+.theme-dark .activity-glass-heading {
+  border: 1px solid rgb(255 255 255 / 0.1);
+  background-color: rgb(255 255 255 / 0.09) !important;
+}
+
+/* Transparent latest-news carousel on the home page in dark mode. */
+.theme-dark .home-news-section {
+  background-color: #050912 !important;
+  background-image: none !important;
+  color: #f8fafc !important;
+}
+
+.theme-dark .home-news-card {
+  border-color: rgb(148 163 184 / 0.2) !important;
+  background-color: rgb(15 27 46 / 0.58) !important;
+  box-shadow: 0 22px 68px rgb(0 0 0 / 0.2) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.theme-dark .home-news-card:hover {
+  border-color: rgb(84 162 255 / 0.48) !important;
+  background-color: rgb(22 38 62 / 0.72) !important;
+}
+
+.theme-dark .home-news-control,
+.theme-dark .home-news-all {
+  border-color: rgb(148 163 184 / 0.22) !important;
+  background-color: rgb(255 255 255 / 0.055) !important;
+  color: #e2e8f0 !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.theme-dark .home-news-control:hover,
+.theme-dark .home-news-all:hover {
+  border-color: rgb(84 162 255 / 0.55) !important;
+  background-color: rgb(84 162 255 / 0.12) !important;
+  color: #ffffff !important;
+}
+
+.theme-dark .home-news-card h3 {
+  color: #f8fafc !important;
+}
+
+.theme-dark .home-news-card p,
+.theme-dark .home-news-card time {
+  color: #cbd5e1 !important;
 }
 
 .theme-high-contrast {
@@ -508,12 +850,26 @@ body {
   color: #cbd5e1 !important;
 }
 
-.theme-dark .news-article-content blockquote {
-  background: linear-gradient(135deg, #172235 0%, #111b2b 100%) !important;
+html.theme-dark body .news-article-content blockquote,
+.theme-dark body .news-article-content blockquote {
+  background-color: #172235 !important;
+  background-image: linear-gradient(135deg, #172235 0%, #111b2b 100%) !important;
   color: #dbe7f6 !important;
   border-color: #3b82f6 !important;
   border-radius: 0 12px 12px 0;
   box-shadow: 0 14px 36px rgb(0 0 0 / 0.22);
+}
+
+html.theme-dark body .news-article-content blockquote *,
+.theme-dark body .news-article-content blockquote * {
+  color: #dbe7f6 !important;
+  background-color: transparent !important;
+}
+
+html.theme-dark body .news-article-content blockquote a,
+.theme-dark body .news-article-content blockquote a {
+  color: #60a5fa !important;
+  text-decoration-color: rgb(96 165 250 / 0.55);
 }
 
 .theme-dark .news-article-content blockquote br {
@@ -529,6 +885,34 @@ body {
 
 .theme-dark .news-article-content a {
   color: #60a5fa !important;
+}
+
+.theme-dark .news-detail-page {
+  background-color: #0b1220;
+  color: #e2e8f0 !important;
+}
+
+.theme-dark .recommended-news {
+  border-color: #2b3a50 !important;
+  background: linear-gradient(180deg, #111b2b 0%, #0b1220 100%) !important;
+}
+
+.theme-dark .recommended-news-title,
+.theme-dark .recommended-news-card-title {
+  color: #f8fafc !important;
+}
+
+.theme-dark .recommended-news-card-title a {
+  color: inherit;
+}
+
+.theme-dark .recommended-news-card:hover .recommended-news-card-title,
+.theme-dark .recommended-news-card:hover .recommended-news-card-title a {
+  color: #60a5fa !important;
+}
+
+.theme-dark .recommended-news-date {
+  color: #94a3b8 !important;
 }
 
 .theme-high-contrast button:hover,

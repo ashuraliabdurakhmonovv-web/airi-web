@@ -3,7 +3,7 @@ import { defaultLocale } from "./config";
 import { fillFromUz, warnParity } from "./fill-from-uz";
 
 type ProductionContent = {
-  nav: { links: string[]; results: string; contact: string };
+  nav: { home: string; links: string[]; results: string; contact: string };
   hero: { words: string[]; badge: string; title: string; accent: string; stats: string[] };
   about: { eyebrow: string; title: string[]; paragraphs: string[]; pillars: string[]; map: { labels: string[]; captions: string[]; stages: string[]; center: string } };
   projects: { eyebrow: string; title: string[]; description: string; all: string; details: string };
@@ -17,7 +17,7 @@ type ProductionContent = {
 };
 
 const uz: ProductionContent = {
-  nav: { links: ["Xizmatlar", "Loyihalar", "Hamkorlar", "Jamoa"], results: "Natijalar", contact: "Murojaat qilish" },
+  nav: { home: "Bosh sahifa", links: ["Xizmatlar", "Loyihalar", "Hamkorlar", "Jamoa"], results: "Natijalar", contact: "Murojaat qilish" },
   hero: { words: ["yaratamiz", "rivojlantiramiz", "joriy qilamiz", "natija beramiz"], badge: "Bu yerda kelajak qurilyapti", title: "Kelajak texnologiyalarini", accent: "birgalikda", stats: ["Sun'iy intellekt loyihalari", "Ilmiy yondashuv", "Sanoat yechimlari"] },
   about: { eyebrow: "Biz haqimizda", title: ["Tadqiqotni", "amaliy mahsulotga", "aylantiramiz."], paragraphs: ["AIRI ishlab chiqarish yo'nalishi sun'iy intellekt, dasturiy platformalar va raqamli axborot tizimlarini loyihalash, ishlab chiqish hamda amaliyotga joriy etish bilan shug'ullanadi.", "Biz ilmiy g'oyani prototipdan boshlab, real sharoitda ishlaydigan raqamli mahsulotgacha olib borishga e'tibor qaratamiz."], pillars: ["Sun'iy intellekt yechimlari", "Raqamli platformalar", "Tadqiqot va prototiplash"], map: { labels: ["AI tizimlari", "Ma'lumot va tahlil", "Dasturiy platformalar", "Integratsiya"], captions: ["ML, CV, NLP", "Tahlil, prognoz", "Web, axborot tizimlari", "API, avtomatlashtirish"], stages: ["Tadqiqot", "Prototip", "Ishlab chiqish", "Sinov", "Joriy etish", "Monitoring"], center: "Ishlab chiqarish" } },
   projects: { eyebrow: "Loyihalar", title: ["Tadqiqotdan", "real mahsulotgacha."], description: "Sun'iy intellekt, ma'lumotlar tahlili va raqamli platformalar asosidagi amaliy ishlanmalar.", all: "Barcha loyihalar", details: "Batafsil" },
@@ -60,7 +60,7 @@ const uz: ProductionContent = {
 };
 
 const ru: ProductionContent = {
-  nav: { links: ["Услуги", "Проекты", "Партнёры", "Команда"], results: "Результаты", contact: "Связаться" },
+  nav: { home: "Главная", links: ["Услуги", "Проекты", "Партнёры", "Команда"], results: "Результаты", contact: "Связаться" },
   hero: { words: ["создаём", "развиваем", "внедряем", "достигаем результата"], badge: "Будущее строится здесь", title: "Технологии будущего", accent: "мы создаём вместе", stats: ["Проекты искусственного интеллекта", "Научный подход", "Отраслевые решения"] },
   about: { eyebrow: "О нас", title: ["Превращаем исследования", "в практический", "продукт."], paragraphs: ["Производственное направление AIRI проектирует, разрабатывает и внедряет системы искусственного интеллекта, программные платформы и цифровые информационные системы.", "Мы сопровождаем научную идею от прототипа до цифрового продукта, работающего в реальных условиях."], pillars: ["Решения искусственного интеллекта", "Цифровые платформы", "Исследования и прототипирование"], map: { labels: ["Системы ИИ", "Данные и аналитика", "Программные платформы", "Интеграция"], captions: ["ML, CV, NLP", "Анализ, прогноз", "Веб, информационные системы", "API, автоматизация"], stages: ["Исследование", "Прототип", "Разработка", "Тестирование", "Внедрение", "Мониторинг"], center: "Производство" } },
   projects: { eyebrow: "Проекты", title: ["От исследования", "к реальному продукту."], description: "Практические разработки на основе искусственного интеллекта, анализа данных и цифровых платформ.", all: "Все проекты", details: "Подробнее" },
@@ -100,7 +100,7 @@ const ru: ProductionContent = {
 };
 
 const en: ProductionContent = {
-  nav: { links: ["Services", "Projects", "Partners", "Team"], results: "Results", contact: "Contact us" },
+  nav: { home: "Home", links: ["Services", "Projects", "Partners", "Team"], results: "Results", contact: "Contact us" },
   hero: { words: ["create", "develop", "deploy", "deliver results"], badge: "The future is built here", title: "We build tomorrow's technologies", accent: "together", stats: ["Artificial intelligence projects", "Scientific approach", "Industry solutions"] },
   about: { eyebrow: "About us", title: ["We turn research", "into practical", "products."], paragraphs: ["AIRI's production division designs, develops, and deploys artificial intelligence systems, software platforms, and digital information systems.", "We focus on taking a scientific idea from prototype to a digital product that performs in real-world conditions."], pillars: ["Artificial intelligence solutions", "Digital platforms", "Research and prototyping"], map: { labels: ["AI systems", "Data and analytics", "Software platforms", "Integration"], captions: ["ML, CV, NLP", "Analysis, forecasting", "Web, information systems", "API, automation"], stages: ["Research", "Prototype", "Development", "Testing", "Deployment", "Monitoring"], center: "Production" } },
   projects: { eyebrow: "Projects", title: ["From research", "to a real product."], description: "Practical developments powered by artificial intelligence, data analytics, and digital platforms.", all: "All projects", details: "Details" },

@@ -26,7 +26,7 @@ export default function ProfessorHighlight() {
   const { t } = useLocale();
 
   return (
-    <section className="px-4 py-14 sm:px-6 lg:flex lg:min-h-screen lg:items-center lg:px-0">
+    <section className="professor-highlight px-4 py-14 sm:px-6 lg:flex lg:min-h-screen lg:items-center lg:px-0">
       <div className="mx-auto w-full max-w-7xl">
         <div className="mx-auto mb-8 flex max-w-3xl flex-col items-center justify-center gap-4 text-center">
           <h2 className="airi-gradient-text airi-section-title font-semibold">
@@ -50,7 +50,7 @@ export default function ProfessorHighlight() {
               />
             </div>
 
-            <div className="airi-ring flex min-h-28 flex-col justify-center items-start border bg-white px-5">
+            <div className="professor-institute-card airi-ring flex min-h-28 flex-col justify-center items-start border bg-white px-5">
               <Image
                 src={Logos}
                 alt={t.hero.instituteFullName}
@@ -75,7 +75,7 @@ export default function ProfessorHighlight() {
           </div>
 
           <div className="grid gap-4 lg:grid-rows-[1fr_124px]">
-            <article className="airi-ring flex border bg-white px-5 py-6 sm:px-6 lg:items-center">
+            <article className="professor-bio-card airi-ring flex border bg-white px-5 py-6 sm:px-6 lg:items-center">
               <div>
                 <div className="mb-4 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
                   {highlights.map((item) => {
@@ -84,7 +84,7 @@ export default function ProfessorHighlight() {
                     return (
                       <div
                         key={item.key}
-                        className="bg-[#f5f7ff] px-3 py-3 text-center">
+                        className="professor-stat-card bg-[#f5f7ff] px-3 py-3 text-center">
                         <Icon className="mx-auto mb-2 h-5 w-5 text-[#604eff]" />
                         <p className="text-[12px] font-semibold uppercase leading-tight text-neutral-500">
                           {t.generalLanding.professorHighlights[item.key].label}
@@ -103,7 +103,7 @@ export default function ProfessorHighlight() {
               </div>
             </article>
 
-            <div className="airi-gradient flex min-h-28 flex-col justify-center px-5 text-white shadow-sm sm:px-6">
+            <div className="flex min-h-28 flex-col justify-center bg-[#0b2c71] px-5 text-white shadow-sm sm:px-6">
               <h3 className="text-[22px] font-bold leading-tight sm:text-[24px]">
                 {t.generalLanding.professorName}
               </h3>

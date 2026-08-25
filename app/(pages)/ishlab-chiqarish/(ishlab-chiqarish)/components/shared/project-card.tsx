@@ -31,7 +31,7 @@ export function ProjectCard({ project, detailsLabel = "Batafsil", displayStatus,
   const localizedDetails = detailsLabel === "Batafsil" ? content.projects.details : detailsLabel;
 
   return (
-    <article className="h-full bg-black">
+    <article className="h-full bg-white/[0.055] backdrop-blur-xl transition-colors duration-500 hover:bg-white/[0.085]">
       <Link
         href={`/ishlab-chiqarish/projects/${project.slug}`}
         className="group flex h-full flex-col outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#54a2ff]">
@@ -54,7 +54,7 @@ export function ProjectCard({ project, detailsLabel = "Batafsil", displayStatus,
             <span className="text-white/50">{project.sector}</span>
           </div>
 
-          <h3 className="mt-4 font-display text-2xl leading-[1.1] tracking-tight text-white">
+          <h3 className="mt-4 text-xl font-semibold leading-[1.3] tracking-[-0.02em] text-white">
             {project.title}
           </h3>
 
@@ -62,7 +62,7 @@ export function ProjectCard({ project, detailsLabel = "Batafsil", displayStatus,
             {project.author}
           </p>
 
-          <p className="mt-3 line-clamp-3 flex-1 text-[15px] leading-relaxed text-white/70">
+          <p className="mt-3 line-clamp-3 flex-1 text-[15px] leading-[1.65] text-white/76">
             {localizedDescription ?? project.shortDescription}
           </p>
 
@@ -80,4 +80,4 @@ export function ProjectCard({ project, detailsLabel = "Batafsil", displayStatus,
 
 /** Grid: >=1280px 3 ustun, 768–1279px 2 ustun, <768px 1 ustun. */
 export const projectGridClassName =
-  "grid border-l border-t border-white/10 md:grid-cols-2 xl:grid-cols-3 [&>*]:border-b [&>*]:border-r [&>*]:border-white/10";
+  "grid gap-[5px] overflow-hidden rounded-2xl border border-white/12 bg-white/[0.025] p-[5px] shadow-[0_24px_80px_rgba(0,0,0,0.20)] md:grid-cols-2 xl:grid-cols-3";

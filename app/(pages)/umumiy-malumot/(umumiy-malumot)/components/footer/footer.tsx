@@ -46,16 +46,16 @@ const instituteLinks = [
 
 const socialLinks = [
   { href: "https://t.me/airiuz", label: "Telegram", icon: Send },
-  { href: "https://youtube.com", label: "YouTube", icon: Youtube },
-  { href: "https://instagram.com", label: "Instagram", icon: Instagram },
-  { href: "https://facebook.com", label: "Facebook", icon: Facebook },
+  { href: "https://www.youtube.com/@airi_uz", label: "YouTube", icon: Youtube },
+  { href: "https://www.instagram.com/airi.uz/", label: "Instagram", icon: Instagram },
+  { href: "https://www.facebook.com/ai.uzbekistan/", label: "Facebook", icon: Facebook },
 ];
 
 const Footer = () => {
   const { locale, t } = useLocale();
 
   return (
-    <footer className="relative bg-[#070b12] text-white">
+    <footer className="relative bg-[#0b132e] text-white">
       <div className="airi-gradient h-1 w-full" />
 
       <div className="mx-auto w-full max-w-7xl px-4 pb-8 pt-12 sm:px-6 sm:pt-14 lg:px-8">

@@ -42,6 +42,21 @@ export function localizedText(value: LocalizedText | undefined, locale: string) 
   return record[locale] || record.uz || record.ru || record.en || "";
 }
 
+const CATEGORY_LABELS: Record<string, Record<string, string>> = {
+  Barchasi: { uz: "Barchasi", ru: "Все", en: "All" },
+  Forumlar: { uz: "Forumlar", ru: "Форумы", en: "Forums" },
+  Hamkorlik: { uz: "Hamkorlik", ru: "Сотрудничество", en: "Cooperation" },
+  "Sun’iy intellekt": { uz: "Sun’iy intellekt", ru: "Искусственный интеллект", en: "Artificial intelligence" },
+  Tadqiqotlar: { uz: "Tadqiqotlar", ru: "Исследования", en: "Research" },
+  Innovatsiyalar: { uz: "Innovatsiyalar", ru: "Инновации", en: "Innovation" },
+  "Institut hayoti": { uz: "Institut hayoti", ru: "Жизнь института", en: "Institute life" },
+};
+
+export function localizedCategory(category: string | undefined, locale: string) {
+  if (!category) return "";
+  return CATEGORY_LABELS[category]?.[locale] || category;
+}
+
 export function formatUzbekDate(value?: string | null) {
   if (!value) return "";
   const date = new Date(value);

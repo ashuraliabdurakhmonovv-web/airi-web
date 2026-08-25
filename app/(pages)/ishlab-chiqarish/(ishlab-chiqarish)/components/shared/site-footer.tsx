@@ -2,9 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Send,
+  Youtube,
+  type LucideIcon,
+} from "lucide-react";
 
-import FooterImage from "@/app/(pages)/ishlab-chiqarish/(ishlab-chiqarish)/public/images/footer.jpg";
 import { useLocale } from "@/i18n";
 import { getProductionContent } from "@/i18n/production-content";
 
@@ -18,12 +24,18 @@ const navLinks = [
 const contactLinks = [
   { name: "info@airi.uz", href: "mailto:info@airi.uz", external: false },
   { name: "+998 (71) 263-41-98", href: "tel:+998712634198", external: false },
-  { name: "airi.uz", href: "https://airi.uz", external: true },
 ];
 
-const socialLinks = [
-  { name: "Telegram", href: "https://t.me/airiuz" },
-  { name: "LinkedIn", href: "https://uz.linkedin.com/company/airiuz" },
+const socialLinks: { name: string; href: string; icon: LucideIcon }[] = [
+  { name: "Telegram", href: "https://t.me/airiuz", icon: Send },
+  { name: "YouTube", href: "https://www.youtube.com/@airi_uz", icon: Youtube },
+  { name: "Instagram", href: "https://www.instagram.com/airi.uz/", icon: Instagram },
+  { name: "Facebook", href: "https://www.facebook.com/ai.uzbekistan/", icon: Facebook },
+  {
+    name: "LinkedIn",
+    href: "https://uz.linkedin.com/company/airiuz",
+    icon: Linkedin,
+  },
 ];
 
 const logoDimensions = {
@@ -43,23 +55,10 @@ export function SiteFooter() {
   const copy = production.footer;
 
   return (
-    <footer className="relative bg-black text-white">
-      {/* Vizual band */}
-      <div className="relative h-48 w-full overflow-hidden md:h-64">
-        <Image
-          src={FooterImage}
-          alt=""
-          aria-hidden="true"
-          placeholder="blur"
-          sizes="100vw"
-          className="h-full w-full object-cover object-center opacity-60"
-        />
-        <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black to-transparent" />
-      </div>
-
-      <div className="mx-auto max-w-350 px-6 lg:px-12">
-        <div className="grid gap-14 pb-16 pt-4 lg:grid-cols-12 lg:pb-20">
+    <footer className="relative overflow-hidden bg-[#050912] px-6 pb-6 text-white lg:px-12 lg:pb-8">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(84,162,255,0.14),transparent_34%),radial-gradient(circle_at_16%_82%,rgba(45,212,191,0.08),transparent_30%)]" />
+      <div className="relative  rounded-2xl border border-white/12 bg-white/[0.055] px-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur-xl lg:px-12">
+        <div className="grid gap-12 pb-12 pt-20 md:pt-24 lg:grid-cols-12 lg:pb-14">
           {/* Brend */}
           <div className="lg:col-span-6">
             <Link
@@ -75,28 +74,33 @@ export function SiteFooter() {
               />
             </Link>
 
-            <p className="mt-6 max-w-sm leading-relaxed text-white/55">
+            <p className="mt-5 max-w-sm leading-relaxed text-white/82">
               {copy.description}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-6">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1.5 text-sm text-white/50 transition-colors hover:text-white">
-                  {link.name}
-                  <ArrowUpRight className="h-3.5 w-3.5 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
-                </a>
-              ))}
+            <div className="mt-8 flex flex-wrap gap-3">
+              {socialLinks.map((link) => {
+                const Icon = link.icon;
+
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.name}
+                    title={link.name}
+                    className="group grid size-12 place-items-center rounded-xl border border-white/25 bg-white/[0.10] text-white/88 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#54a2ff]/70 hover:bg-[#0b2c71]/80 hover:text-white hover:shadow-[0_12px_30px_rgba(11,44,113,0.35)]">
+                    <Icon className="size-5 transition-transform duration-300 group-hover:scale-110" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
           {/* Bo'limlar */}
           <nav className="lg:col-span-3">
-            <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/38">
+            <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/70">
               {copy.sections}
             </h2>
             <ul className="mt-6 grid gap-3.5">
@@ -104,7 +108,7 @@ export function SiteFooter() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/65 transition-colors hover:text-white">
+                    className="text-sm text-white/88 transition-colors hover:text-white">
                     {production.nav.links[index]}
                   </a>
                 </li>
@@ -114,7 +118,7 @@ export function SiteFooter() {
 
           {/* Aloqa */}
           <div className="lg:col-span-3">
-            <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/38">
+            <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/70">
               {copy.contact}
             </h2>
             <ul className="mt-6 grid gap-3.5">
@@ -124,7 +128,7 @@ export function SiteFooter() {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="text-sm text-white/65 transition-colors hover:text-white">
+                    className="text-sm text-white/88 transition-colors hover:text-white">
                     {link.name}
                   </a>
                 </li>
@@ -133,7 +137,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-white/10 py-8 text-sm text-white/35 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-3 border-t border-white/20 py-6 text-sm text-white/68 md:flex-row md:items-center md:justify-between">
           <p>{copy.copyright}</p>
           <p className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[#54a2ff]" />

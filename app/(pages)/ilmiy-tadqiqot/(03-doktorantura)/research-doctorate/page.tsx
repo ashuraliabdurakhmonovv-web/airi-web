@@ -23,8 +23,8 @@ const PhDPrograms = () => {
   const copy = getResearchContent(locale);
 
   return (
-    <main className="min-h-screen bg-white text-slate-950">
-      <section className="relative overflow-hidden bg-[#f7f9fc] px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+    <main className="doctorate-page min-h-screen bg-white text-slate-950">
+      <section className="doctorate-header relative overflow-hidden bg-[#f7f9fc] px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(96,78,255,0.07)_1px,transparent_1px),linear-gradient(180deg,rgba(8,232,234,0.08)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
         <div className="relative mx-auto max-w-7xl">
@@ -78,7 +78,7 @@ const PhDPrograms = () => {
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.72fr_1.28fr]">
-          <aside className="border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_24px_80px_rgba(15,23,42,0.14)]">
+          <aside className="doctorate-aside border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_24px_80px_rgba(15,23,42,0.14)]">
             <div className="flex h-12 w-12 items-center justify-center bg-white text-slate-950">
               <ListChecks className="h-6 w-6" />
             </div>
@@ -114,7 +114,7 @@ const PhDPrograms = () => {
             {phdItems.map((item, index) => (
               <li
                 key={item.number}
-                className="group flex min-h-64 flex-col justify-between border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#604eff]/35 hover:shadow-[0_22px_70px_rgba(96,78,255,0.12)]"
+                className="doctorate-card group flex min-h-64 flex-col justify-between border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#604eff]/35 hover:shadow-[0_22px_70px_rgba(96,78,255,0.12)]"
               >
                 <div>
                   <div className="flex items-start justify-between gap-4">

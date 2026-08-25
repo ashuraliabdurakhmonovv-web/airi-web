@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import BannerImage from "@/public/Laboratoriya/banner.png";
+import BannerImageDark from "@/public/research-collaboration-dark-v2.png";
 import { useLocale } from "@/i18n";
 import { getResearchContent } from "@/i18n/research-content";
 
@@ -14,7 +15,7 @@ export function CtaBanner() {
   const copy = getResearchContent(locale).cta;
 
   return (
-    <section className="bg-[#f7faff] px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+    <section className="research-cta bg-[#f7faff] px-4 py-16 sm:px-6 md:py-20 lg:px-8">
       <div className="relative mx-auto grid min-h-[380px] max-w-7xl overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-[0_26px_80px_rgba(15,23,42,0.10)] md:min-h-[360px] lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
         <Image
           src={BannerImage}
@@ -22,14 +23,22 @@ export function CtaBanner() {
           fill
           priority={false}
           sizes="(max-width: 1280px) 100vw, 1280px"
-          className="object-cover object-center brightness-[1.02] contrast-[1.04] saturate-[1.05]"
+          className="theme-image-light object-cover object-center brightness-[1.02] contrast-[1.04] saturate-[1.05]"
+        />
+        <Image
+          src={BannerImageDark}
+          alt=""
+          aria-hidden="true"
+          fill
+          sizes="(max-width: 1280px) 100vw, 1280px"
+          className="theme-image-dark object-cover object-center"
         />
 
         {/* White reading layer */}
-        <div className="absolute inset-0 bg-linear-to-r from-[#f6f9ff] via-[#f6f9ff]/92 to-[#f6f9ff]/30 lg:from-[#f6f9ff]/95 lg:via-[#f6f9ff]/78 lg:to-transparent" />
+        <div className="cta-reading-overlay absolute inset-0 bg-linear-to-r from-[#f6f9ff] via-[#f6f9ff]/92 to-[#f6f9ff]/30 lg:from-[#f6f9ff]/95 lg:via-[#f6f9ff]/78 lg:to-transparent" />
 
         {/* Bottom softness */}
-        <div className="absolute inset-0 bg-linear-to-t from-white/55 via-transparent to-white/10" />
+        <div className="cta-soft-overlay absolute inset-0 bg-linear-to-t from-white/55 via-transparent to-white/10" />
 
         {/* Subtle blue atmosphere */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_84%_18%,rgba(37,99,235,0.16),transparent_30%)]" />

@@ -4,6 +4,7 @@
 
 import Image from "next/image";
 import AboutImage from "@/public/Laboratoriya/aboutus.png";
+import AboutImageDark from "@/public/research-about-dark.png";
 import { useLocale } from "@/i18n";
 import { getResearchContent } from "@/i18n/research-content";
 
@@ -41,12 +42,21 @@ export function AboutUs() {
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 64vw"
-          className="object-cover object-[48%_center] brightness-[1.02] contrast-[1.08] saturate-[1.12]"
+          className="theme-image-light object-cover object-[48%_center] brightness-[1.02] contrast-[1.08] saturate-[1.12]"
         />
-        <div className="absolute inset-0 bg-[#f7faff]/84 lg:hidden" />
-        <div className="absolute bottom-0 left-0 top-0 hidden w-20 bg-linear-to-r from-[#f7faff]/38 to-transparent lg:block" />
-        <div className="absolute bottom-0 right-0 top-0 hidden w-72 bg-linear-to-l from-[#f7faff] via-[#f7faff]/74 to-transparent lg:block" />
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-[#f7faff] to-transparent" />
+        <Image
+          src={AboutImageDark}
+          alt=""
+          aria-hidden="true"
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 55vw"
+          className="theme-image-dark object-cover object-center"
+        />
+        <div className="hero-reading-overlay absolute inset-0 bg-[#f7faff]/84 lg:hidden" />
+        <div className="about-left-overlay absolute bottom-0 left-0 top-0 hidden w-20 bg-linear-to-r from-[#f7faff]/38 to-transparent lg:block" />
+        <div className="about-right-overlay absolute bottom-0 right-0 top-0 hidden w-72 bg-linear-to-l from-[#f7faff] via-[#f7faff]/74 to-transparent lg:block" />
+        <div className="about-bottom-overlay absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-[#f7faff] to-transparent" />
       </div>
 
       <div className="container relative z-20 mx-auto w-full px-4 py-16 sm:px-6 lg:px-10">

@@ -15,6 +15,10 @@ export function getStaticNewsBySlug(slug: string) {
   return articleItems.find((article) => article.slug === slug);
 }
 
+export function getStaticNewsIndexById(id: string) {
+  return indexItems.find((item) => item.id === id);
+}
+
 export function getStaticRelatedNews(article: StaticNewsArticle | StaticNewsIndexItem, limit = 3) {
   return [...indexItems]
     .filter((item) => item.slug !== article.slug)

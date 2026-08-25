@@ -99,7 +99,11 @@
     "id": "f36d0fe9-172c-4f9b-b7dc-83dce175e45b",
     "slug": "f36d0fe9-172c-4f9b-b7dc-83dce175e45b",
     "title": "Dissertatsiya himoyasi bo‘lib o‘tadi",
-    "description": "#HIMOYA 2026-yil 7-iyul kuni Urunbayev Jasur Erkinovich ning 05.01.07–“Matematik modellashtirish. Sonli usullar va dasturlar majmui ” (texnika fanlari) ixtisosligi bo‘yicha “Koʻp komponentli muhitlarda kross-diffuziyaga ega jarayonlarni tadqiq qilish” mavzusida texnika fanlari do",
+    "description": {
+      "uz": "#HIMOYA 2026-yil 7-iyul kuni Urunbayev Jasur Erkinovichning 05.01.07 — “Matematik modellashtirish. Sonli usullar va dasturlar majmui” ixtisosligi bo‘yicha dissertatsiya himoyasi bo‘lib o‘tadi.",
+      "ru": "#ЗАЩИТА 7 июля 2026 года состоится защита диссертации Урунбаева Жасура Эркиновича по специальности 05.01.07 «Математическое моделирование. Численные методы и комплексы программ».",
+      "en": "#DEFENSE On July 7, 2026, Jasur Erkinovich Urunbayev will defend his dissertation in specialty 05.01.07, Mathematical Modeling, Numerical Methods and Software Systems."
+    },
     "category": "Tadqiqotlar",
     "publishedAt": null,
     "displayDate": "",
@@ -107,8 +111,16 @@
     "language": "en",
     "isFeatured": true,
     "sourceOrder": 1,
-    "content": "#HIMOYA\n2026-yil 7-iyul kuni\nUrunbayev Jasur Erkinovich\nning\n05.01.07–“Matematik modellashtirish. Sonli usullar va dasturlar majmui\n” (texnika fanlari) ixtisosligi bo‘yicha\n“Koʻp komponentli muhitlarda kross-diffuziyaga ega jarayonlarni tadqiq qilish”\nmavzusida texnika fanlari doktori (DSc) dissertatsiyasining himoyasi bo'lib o'tadi.\n📹 Himoya jarayonini rasmiy\nYouTube\nsahifamiz orqali jonli efirda kuzatib borishingiz mumkin.",
-    "contentHtml": "<p>#HIMOYA <br/><br/>\n    2026-yil 7-iyul kuni <b>Urunbayev Jasur Erkinovich</b>ning <u> </u><b><u>05.01.07–“Matematik modellashtirish. Sonli usullar va dasturlar majmui</u></b>” (texnika fanlari) ixtisosligi bo‘yicha <b><u>“Koʻp komponentli muhitlarda kross-diffuziyaga ega jarayonlarni tadqiq qilish”</u></b> mavzusida texnika fanlari doktori (DSc) dissertatsiyasining himoyasi bo'lib o'tadi.<br/><br/></p>\n<blockquote>\n   📹 Himoya jarayonini rasmiy <a href=\"https://youtube.com/@airi_uz?si=0Uc7H2XaNbxATEup\">YouTube</a> sahifamiz orqali jonli efirda kuzatib borishingiz mumkin.\n  </blockquote><b><br/></b>\n<p></p>",
+    "content": {
+      "uz": "#HIMOYA\n2026-yil 7-iyul kuni Urunbayev Jasur Erkinovichning 05.01.07 — “Matematik modellashtirish. Sonli usullar va dasturlar majmui” (texnika fanlari) ixtisosligi bo‘yicha “Ko‘p komponentli muhitlarda kross-diffuziyaga ega jarayonlarni tadqiq qilish” mavzusidagi texnika fanlari doktori (DSc) dissertatsiyasining himoyasi bo‘lib o‘tadi.\nHimoya jarayonini rasmiy YouTube sahifamiz orqali jonli efirda kuzatib borishingiz mumkin.",
+      "ru": "#ЗАЩИТА\n7 июля 2026 года состоится защита диссертации Урунбаева Жасура Эркиновича на соискание учёной степени доктора технических наук (DSc) по специальности 05.01.07 «Математическое моделирование. Численные методы и комплексы программ» на тему «Исследование процессов с кросс-диффузией в многокомпонентных средах».\nТрансляцию защиты можно посмотреть на нашей официальной странице YouTube.",
+      "en": "#DEFENSE\nOn July 7, 2026, Jasur Erkinovich Urunbayev will defend his Doctor of Technical Sciences (DSc) dissertation in specialty 05.01.07, Mathematical Modeling, Numerical Methods and Software Systems, titled “Research into cross-diffusion processes in multicomponent media.”\nThe defense will be streamed live on our official YouTube page."
+    },
+    "contentHtml": {
+      "uz": "<p>#HIMOYA<br/><br/>2026-yil 7-iyul kuni <b>Urunbayev Jasur Erkinovich</b>ning <b><u>05.01.07 — “Matematik modellashtirish. Sonli usullar va dasturlar majmui”</u></b> ixtisosligi bo‘yicha <b><u>“Ko‘p komponentli muhitlarda kross-diffuziyaga ega jarayonlarni tadqiq qilish”</u></b> mavzusidagi texnika fanlari doktori (DSc) dissertatsiyasining himoyasi bo‘lib o‘tadi.</p><blockquote>📹 Himoya jarayonini rasmiy <a href=\"https://www.youtube.com/@airi_uz\">YouTube</a> sahifamiz orqali jonli efirda kuzatib borishingiz mumkin.</blockquote>",
+      "ru": "<p>#ЗАЩИТА<br/><br/>7 июля 2026 года состоится защита диссертации <b>Урунбаева Жасура Эркиновича</b> на соискание учёной степени доктора технических наук (DSc) по специальности <b><u>05.01.07 «Математическое моделирование. Численные методы и комплексы программ»</u></b> на тему <b><u>«Исследование процессов с кросс-диффузией в многокомпонентных средах»</u></b>.</p><blockquote>📹 Трансляцию защиты можно посмотреть на нашей официальной странице <a href=\"https://www.youtube.com/@airi_uz\">YouTube</a>.</blockquote>",
+      "en": "<p>#DEFENSE<br/><br/>On July 7, 2026, <b>Jasur Erkinovich Urunbayev</b> will defend his Doctor of Technical Sciences (DSc) dissertation in specialty <b><u>05.01.07, Mathematical Modeling, Numerical Methods and Software Systems</u></b>, titled <b><u>“Research into cross-diffusion processes in multicomponent media.”</u></b></p><blockquote>📹 The defense will be streamed live on our official <a href=\"https://www.youtube.com/@airi_uz\">YouTube</a> page.</blockquote>"
+    },
     "images": [],
     "sourceUrl": "https://airi.uz/news/f36d0fe9-172c-4f9b-b7dc-83dce175e45b-",
     "legacyId": "f36d0fe9-172c-4f9b-b7dc-83dce175e45b"
@@ -217,8 +229,8 @@
   {
     "id": "a253b38d-e7ed-486e-a954-12f97c144852",
     "slug": "a253b38d-e7ed-486e-a954-12f97c144852-protection",
-    "title": "Dissertatsiya himoyasi bo‘lib o‘tadi",
-    "description": "#HIMOYA Joriy yilning 7-may kuni Axmedjanova Zarrina Iskandarovnaning 05.01.03 – “Informatikaning nazariy asoslari” (texnika fanlari) ixtisosligi bo‘yicha “Evolyutsion gibrid qidiruv asosida transport logistikasi axborot tizimi ma’lumotlarning o’zaro ta’sir modellari va algoritml",
+    "title": { "uz": "Dissertatsiya himoyasi bo‘lib o‘tadi", "ru": "Состоится защита диссертации", "en": "A dissertation defense will be held" },
+    "description": { "uz": "#HIMOYA 7-may kuni Axmedjanova Zarrina Iskandarovnaning dissertatsiya himoyasi bo‘lib o‘tadi.", "ru": "#ЗАЩИТА 7 мая состоится защита диссертации Заррины Искандаровны Ахмеджановой.", "en": "#DEFENSE On May 7, Zarrina Iskandarovna Axmedjanova will defend her dissertation." },
     "category": "Sun’iy intellekt",
     "publishedAt": null,
     "displayDate": "",
@@ -226,8 +238,8 @@
     "language": "en",
     "isFeatured": false,
     "sourceOrder": 8,
-    "content": "#HIMOYA\nJoriy yilning 7-may kuni Axmedjanova Zarrina Iskandarovnaning 05.01.03 – “Informatikaning nazariy asoslari” (texnika fanlari) ixtisosligi bo‘yicha “Evolyutsion gibrid qidiruv asosida transport logistikasi axborot tizimi ma’lumotlarning o’zaro ta’sir modellari va algoritmlari” mavzusida texnika fanlari bo'yicha falsafa doktori (PhD) dissertatsiyasining himoyasi bo'lib o'tadi.\nHimoya jarayonini rasmiy YouTube sahifamiz orqali jonli efirda kuzatib borishingiz mumkin.",
-    "contentHtml": "<p>#HIMOYA <br/><br/>\n   Joriy yilning 7-may kuni Axmedjanova Zarrina Iskandarovnaning 05.01.03 – “Informatikaning nazariy asoslari” (texnika fanlari) ixtisosligi bo‘yicha “Evolyutsion gibrid qidiruv asosida transport logistikasi axborot tizimi ma’lumotlarning o’zaro ta’sir modellari va algoritmlari” mavzusida texnika fanlari bo'yicha falsafa doktori (PhD) dissertatsiyasining himoyasi bo'lib o'tadi.<br/><br/>\n   Himoya jarayonini rasmiy YouTube sahifamiz orqali jonli efirda kuzatib borishingiz mumkin.</p>",
+    "content": { "uz": "#HIMOYA\n7-may kuni Axmedjanova Zarrina Iskandarovnaning 05.01.03 — Informatikaning nazariy asoslari ixtisosligi bo‘yicha PhD dissertatsiyasi himoyasi bo‘lib o‘tadi. Himoyani rasmiy YouTube sahifamiz orqali jonli kuzatish mumkin.", "ru": "#ЗАЩИТА\n7 мая состоится защита диссертации Заррины Искандаровны Ахмеджановой на соискание степени PhD по специальности 05.01.03 — Теоретические основы информатики. Тема работы: модели и алгоритмы взаимодействия данных информационной системы транспортной логистики на основе эволюционного гибридного поиска. Трансляция будет доступна на официальной странице института в YouTube.", "en": "#DEFENSE\nOn May 7, Zarrina Iskandarovna Axmedjanova will defend her PhD dissertation in specialty 05.01.03 — Theoretical Foundations of Computer Science. The defense will be streamed on the institute’s official YouTube channel." },
+    "contentHtml": { "uz": "<p><strong>#HIMOYA</strong></p><p>7-may kuni Axmedjanova Zarrina Iskandarovnaning 05.01.03 — Informatikaning nazariy asoslari ixtisosligi bo‘yicha PhD dissertatsiyasi himoyasi bo‘lib o‘tadi.</p><blockquote>Himoyani rasmiy <a href=\"https://www.youtube.com/@airi_uz\">YouTube sahifamiz</a> orqali jonli kuzatish mumkin.</blockquote>", "ru": "<p><strong>#ЗАЩИТА</strong></p><p>7 мая состоится защита диссертации Заррины Искандаровны Ахмеджановой на соискание степени PhD по специальности 05.01.03 — Теоретические основы информатики. Тема работы: модели и алгоритмы взаимодействия данных информационной системы транспортной логистики на основе эволюционного гибридного поиска.</p><blockquote>Трансляция будет доступна на официальной <a href=\"https://www.youtube.com/@airi_uz\">странице института в YouTube</a>.</blockquote>", "en": "<p><strong>#DEFENSE</strong></p><p>On May 7, Zarrina Iskandarovna Axmedjanova will defend her PhD dissertation in specialty 05.01.03 — Theoretical Foundations of Computer Science.</p><blockquote>The defense will be streamed on the institute’s official <a href=\"https://www.youtube.com/@airi_uz\">YouTube channel</a>.</blockquote>" },
     "images": [],
     "sourceUrl": "https://airi.uz/news/a253b38d-e7ed-486e-a954-12f97c144852-protection",
     "legacyId": "a253b38d-e7ed-486e-a954-12f97c144852"

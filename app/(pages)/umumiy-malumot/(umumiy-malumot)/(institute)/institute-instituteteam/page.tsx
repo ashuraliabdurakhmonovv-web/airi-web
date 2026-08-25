@@ -74,7 +74,7 @@ const teamMemberBase: TeamMemberBase[] = [
     accent: "from-amber-300 via-orange-400 to-[#604eff]",
     socialLinks: [
       { type: "phone", url: "tel:+998712634198" },
-      { type: "email", url: "mailto:I.baykhanov@gmail.com" },
+      { type: "email", url: "mailto:ibaykhanov@airi.uz" },
     ],
   },
   {
@@ -125,7 +125,7 @@ const teamMemberBase: TeamMemberBase[] = [
     accent: "from-emerald-300 via-teal-400 to-[#604eff]",
     socialLinks: [
       { type: "phone", url: "tel:+998712634198" },
-      { type: "email", url: "mailto:n.valiyeva@airi.uz" },
+      { type: "email", url: "mailto:n.valieva@airi.uz" },
     ],
   },
   {
@@ -181,14 +181,20 @@ const teamMemberBase: TeamMemberBase[] = [
     name: "Fazilov Shavkat Xayrullayevich",
     imageUrl: "/institutJamoasi/Fazilov%20Shavkat.png",
     accent: "from-cyan-400 via-[#604eff] to-violet-400",
-    socialLinks: [{ type: "phone", url: "tel:+998712634198" }],
+    socialLinks: [
+      { type: "phone", url: "tel:+998712634198" },
+      { type: "email", url: "mailto:sh.fazilov@airi.uz" },
+    ],
   },
   {
     id: "fozilova-madina",
     name: "Fozilova Madina Mirxalilovna",
     imageUrl: "/institutJamoasi/Fozilova%20Madina.png",
     accent: "from-rose-300 via-fuchsia-400 to-[#604eff]",
-    socialLinks: [{ type: "phone", url: "tel:+998712634198" }],
+    socialLinks: [
+      { type: "phone", url: "tel:+998712634198" },
+      { type: "email", url: "mailto:m.fozilova@airi.uz" },
+    ],
   },
   {
     id: "mirzayev-nomaz",
@@ -202,28 +208,40 @@ const teamMemberBase: TeamMemberBase[] = [
     name: "Boboraximov Baxtiyor Ixtiyorovich",
     imageUrl: "/institutJamoasi/Boboraximov%20Baxtiyor.png",
     accent: "from-indigo-400 via-[#604eff] to-fuchsia-400",
-    socialLinks: [{ type: "phone", url: "tel:+998712634198" }],
+    socialLinks: [
+      { type: "phone", url: "tel:+998712634198" },
+      { type: "email", url: "mailto:b.boborakhimov@airi.uz" },
+    ],
   },
   {
     id: "murodullayev-baxtiyor",
     name: "Murodullayev Bahtiyor To'lqin o'g'li",
     imageUrl: "/institutJamoasi/Murodullayev%20Baxtiyor.png",
     accent: "from-sky-400 via-cyan-300 to-emerald-300",
-    socialLinks: [{ type: "phone", url: "tel:+998712634198" }],
+    socialLinks: [
+      { type: "phone", url: "tel:+998712634198" },
+      { type: "email", url: "mailto:b.murodullayev@airi.uz" },
+    ],
   },
   {
     id: "azimov-baxtiyor",
     name: "Azimov Baxtiyor Magrupovich",
     imageUrl: "/Domlalar/AzimovBaxtiyor.jpg",
     accent: "from-amber-300 via-orange-400 to-[#604eff]",
-    socialLinks: [{ type: "phone", url: "tel:+998712634198" }],
+    socialLinks: [
+      { type: "phone", url: "tel:+998712634198" },
+      { type: "email", url: "mailto:b.azimov@airi.uz" },
+    ],
   },
   {
     id: "xamdamov-rustam",
     name: "Xamdamov Rustam Xamdamovich",
     imageUrl: "/Domlalar/XamdamovRustam.png",
     accent: "from-lime-300 via-emerald-400 to-[#604eff]",
-    socialLinks: [{ type: "phone", url: "tel:+998712634198" }],
+    socialLinks: [
+      { type: "phone", url: "tel:+998712634198" },
+      { type: "email", url: "mailto:r.xamdamov@airi.uz" },
+    ],
   },
   {
     id: "alimov-sanjar",

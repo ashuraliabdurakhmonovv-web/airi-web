@@ -38,9 +38,9 @@ const Home = () => {
           `,
         }}
       />
-      <div className="-mt-20 bg-white">
+      <div className="general-landing -mt-20 bg-white">
         <Hero />
-        <div className="space-y-4 bg-linear-to-b from-white via-[#f8faff] to-white pb-14">
+        <div className="general-landing-sections space-y-4 bg-linear-to-b from-white via-[#f8faff] to-white pb-14">
           
           <ProfessorHighlight />
           <Activities />

@@ -158,7 +158,7 @@ function ProductionMap({ isVisible }: { isVisible: boolean }) {
 
         {/* Markaziy tugun */}
         <div
-          className={`absolute left-1/2 top-1/2 z-10 flex size-26 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-white/25 bg-black text-center transition-all duration-1000 sm:size-30 ${
+          className={`absolute left-1/2 top-1/2 z-10 flex size-26 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-white/25 bg-[#07101e]/82 text-center shadow-[0_12px_40px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-1000 sm:size-30 ${
             isVisible ? "scale-100 opacity-100" : "scale-90 opacity-0"
           }`}>
           <span className="font-display text-2xl tracking-tight text-white sm:text-3xl">
@@ -186,7 +186,7 @@ function ProductionMap({ isVisible }: { isVisible: boolean }) {
               className={`absolute z-10 w-[8.5rem] -translate-x-1/2 -translate-y-1/2 border px-3 py-2.5 backdrop-blur-sm sm:w-40 sm:px-4 sm:py-3 ${
                 isActive
                   ? "border-white/45 bg-white/[0.09]"
-                  : "border-white/14 bg-black/70"
+                  : "border-white/14 bg-[#07101e]/68"
               } ${
                 isVisible
                   ? "translate-x-[-50%] opacity-100"
@@ -266,15 +266,16 @@ export function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative overflow-hidden bg-[oklch(0.09_0.01_260)] py-24 text-white lg:py-32">
+      className="relative overflow-hidden bg-[#050912] py-24 text-white lg:py-32">
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/15 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_24%,rgba(45,212,191,0.09),transparent_30%),radial-gradient(circle_at_78%_52%,rgba(84,162,255,0.15),transparent_36%)]" />
 
       <div className="relative z-10 mx-auto max-w-350 px-6 lg:px-12">
-        <div className="grid items-center gap-16 lg:grid-cols-12 lg:gap-20">
+        <div className="grid items-center gap-14 rounded-2xl border border-white/12 bg-white/[0.055] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:p-8 lg:grid-cols-12 lg:gap-16 lg:p-10">
           {/* Chap ustun — matn */}
           <div className="lg:col-span-6">
             <span
-              className={`mb-8 inline-flex items-center gap-4 font-mono text-sm text-white/45 transition-all duration-700 ${
+              className={`mb-8 inline-flex items-center gap-4 font-mono text-sm text-white/68 transition-all duration-700 ${
                 isVisible ? "opacity-100" : "opacity-0"
               }`}>
               <span className="h-px w-12 bg-white/20" />
@@ -282,18 +283,18 @@ export function AboutSection() {
             </span>
 
             <h2
-              className={`font-display text-[clamp(2.75rem,6.5vw,5.5rem)] leading-[0.92] tracking-tight transition-all duration-1000 ${
+              className={`max-w-2xl text-[clamp(2rem,3.7vw,3.5rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-balance transition-all duration-1000 ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-8 opacity-0"
               }`}>
               <span className="block">{copy.title[0]}</span>
-              <span className="block text-white/62">{copy.title[1]}</span>
+              <span className="block text-white/82">{copy.title[1]}</span>
               <span className="block">{copy.title[2]}</span>
             </h2>
 
             <div
-              className={`mt-10 grid max-w-xl gap-5 text-lg leading-relaxed text-white/62 transition-all delay-100 duration-1000 ${
+              className={`mt-9 grid max-w-xl gap-5 text-[1.05rem] leading-[1.75] text-white/78 transition-all delay-100 duration-1000 ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-6 opacity-0"
@@ -303,17 +304,17 @@ export function AboutSection() {
             </div>
 
             <div
-              className={`mt-12 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-3 ${
+              className={`mt-12 grid gap-px overflow-hidden rounded-xl border border-white/12 bg-white/12 sm:grid-cols-3 ${
                 isVisible ? "opacity-100" : "opacity-0"
               } transition-opacity delay-200 duration-1000`}>
               {pillars.map((pillar) => (
                 <div
                   key={pillar.key}
-                  className="bg-[oklch(0.09_0.01_260)] px-5 py-6">
+                  className="bg-[#07101e]/76 px-5 py-6 backdrop-blur-xl">
                   <span className="font-display text-3xl tracking-tight text-white">
                     {pillar.key}
                   </span>
-                  <p className="mt-2 text-sm leading-snug text-white/48">
+                  <p className="mt-2 text-sm leading-snug text-white/68">
                     {pillar.label}
                   </p>
                 </div>

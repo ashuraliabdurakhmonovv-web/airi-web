@@ -44,8 +44,8 @@
   {
     "id": "35488ec1-644a-4fd4-bf80-8fb16aa177b4",
     "slug": "35488ec1-644a-4fd4-bf80-8fb16aa177b4-protection",
-    "title": "Dissertatsiya himoyasi bo‘lib o‘tadi",
-    "description": "#HIMOYA 2026-yil 8-iyul kuni Yaxshibayev Doniyor Sultanbayevich ning 05.01.07–“Matematik modellashtirish. Sonli usullar va dasturlar majmui ” ixtisosligi bo‘yicha “Ko‘p fazali suyuqliklarning qatlamli oqimlari jarayonining dinamikasini sonli modellashtirish” mavzusida texnika fan",
+    "title": { "uz": "Dissertatsiya himoyasi bo‘lib o‘tadi", "ru": "Состоится защита диссертации", "en": "A dissertation defense will be held" },
+    "description": { "uz": "#HIMOYA 2026-yil 8-iyul kuni Yaxshibayev Doniyor Sultanbayevichning dissertatsiya himoyasi bo‘lib o‘tadi.", "ru": "#ЗАЩИТА 8 июля 2026 года состоится защита диссертации Яхшибаева Дониёра Султанбаевича.", "en": "#DEFENSE On July 8, 2026, Doniyor Sultanbayevich Yaxshibayev will defend his dissertation." },
     "category": "Tadqiqotlar",
     "publishedAt": null,
     "displayDate": "",
@@ -57,8 +57,8 @@
   {
     "id": "f36d0fe9-172c-4f9b-b7dc-83dce175e45b",
     "slug": "f36d0fe9-172c-4f9b-b7dc-83dce175e45b",
-    "title": "Dissertatsiya himoyasi bo‘lib o‘tadi",
-    "description": "#HIMOYA 2026-yil 7-iyul kuni Urunbayev Jasur Erkinovich ning 05.01.07–“Matematik modellashtirish. Sonli usullar va dasturlar majmui ” (texnika fanlari) ixtisosligi bo‘yicha “Koʻp komponentli muhitlarda kross-diffuziyaga ega jarayonlarni tadqiq qilish” mavzusida texnika fanlari do",
+    "title": { "uz": "Dissertatsiya himoyasi bo‘lib o‘tadi", "ru": "Состоится защита диссертации", "en": "A dissertation defense will be held" },
+    "description": { "uz": "#HIMOYA 2026-yil 7-iyul kuni Urunbayev Jasur Erkinovichning dissertatsiya himoyasi bo‘lib o‘tadi.", "ru": "#ЗАЩИТА 7 июля 2026 года состоится защита диссертации Жасура Эркиновича Урунбаева.", "en": "#DEFENSE On July 7, 2026, Jasur Erkinovich Urunbayev will defend his dissertation." },
     "category": "Tadqiqotlar",
     "publishedAt": null,
     "displayDate": "",
@@ -70,8 +70,8 @@
   {
     "id": "ffff4dc7-a1b1-4b9d-8a4f-b97856add979",
     "slug": "ffff4dc7-a1b1-4b9d-8a4f-b97856add979-the-institute-hosted-a-meeting-dedicated-to-the-broad-implementation-of-artificial-intelligence-technologies-in-the-syrdarya-region",
-    "title": "Institutda sun'iy intellekt texnologiyalarini Sirdaryo viloyatida keng joriy etish masalalariga bag'ishlangan uchrashuv bo'lib o'tdi",
-    "description": "Bugun Raqamli texnologiyalar va sun'iy intellektni rivojlantirish ilmiy-tadqiqot institutida Sirdaryo viloyati hokimining raqamli texnologiyalar va sun'iy intellekt texnologiyalarini rivojlantirish masalalari bo‘yicha maslahatchisi, Raqamli texnologiyalar vazirligi hududiy boshqa",
+    "title": { "uz": "Institutda sun'iy intellekt texnologiyalarini Sirdaryo viloyatida keng joriy etish masalalariga bag'ishlangan uchrashuv bo'lib o'tdi", "ru": "В институте обсудили широкое внедрение технологий искусственного интеллекта в Сырдарьинской области", "en": "The institute discussed the broad implementation of artificial intelligence technologies in the Syrdarya region" },
+    "description": { "uz": "Institutda Sirdaryo viloyatida raqamli texnologiyalar va sun'iy intellektni rivojlantirish masalalariga bag'ishlangan uchrashuv bo'lib o'tdi.", "ru": "В институте состоялась встреча, посвящённая развитию цифровых технологий и искусственного интеллекта в Сырдарьинской области.", "en": "The institute held a meeting dedicated to developing digital technologies and artificial intelligence in the Syrdarya region." },
     "category": "Hamkorlik",
     "publishedAt": null,
     "displayDate": "",
@@ -83,8 +83,8 @@
   {
     "id": "d3a24414-f02e-4547-86fe-578e69207058",
     "slug": "d3a24414-f02e-4547-86fe-578e69207058",
-    "title": "Dissertatsiya himoyasi bo‘lib o‘tadi",
-    "description": "#HIMOYA 2026-yil 26-iyun kuni Nugmanova Movludaxon Avaz qizi ning 05.01.11-“Raqamli texnologiyalar va sun’iy intellekt” ixtisosligi bo‘yicha “Nutqni qayta ishlash asosida hissiyotlarni aniqlash algoritmlari” mavzusida texnika fanlari bo'yicha falsafa doktori (PhD) dissertatsiyasi",
+    "title": { "uz": "Dissertatsiya himoyasi bo‘lib o‘tadi", "ru": "Состоится защита диссертации", "en": "A dissertation defense will be held" },
+    "description": { "uz": "#HIMOYA 2026-yil 26-iyun kuni Nugmanova Movludaxon Avaz qizining dissertatsiya himoyasi bo‘lib o‘tadi.", "ru": "#ЗАЩИТА 26 июня 2026 года состоится защита диссертации Мовлудахон Аваз кизи Нугмановой.", "en": "#DEFENSE On June 26, 2026, Movludakhon Avaz qizi Nugmanova will defend her dissertation." },
     "category": "Sun’iy intellekt",
     "publishedAt": null,
     "displayDate": "",
@@ -96,8 +96,8 @@
   {
     "id": "bc573387-7809-4421-aafb-ee7d311f0891",
     "slug": "bc573387-7809-4421-aafb-ee7d311f0891-the-forum-republic-of-korea-and-uzbekistan--from-dialogue-to-action--strategic-partnership-in-a-new-era-was-held",
-    "title": "\"Koreya Respublikasi va Oʻzbekiston: Muloqotdan amaliy harakatga - yangi davr strategik sherikchiligi” forumi bo'lib o'tdi",
-    "description": "Raqamli texnologiyalar va sun'iy intellektni rivojlantirish ilmiy-tadqiqot instituti direktori A.Kadirov Koreya Respublikasining Seul shahrida bo'lib o'tgan \" Koreya Respublikasi va Oʻzbekiston: Muloqotdan amaliy harakatga - yangi davr strategik sherikchiligi ” forumida \" Oʻzbeki",
+    "title": { "uz": "Koreya Respublikasi va O‘zbekiston: muloqotdan amaliy harakatga — yangi davr strategik sherikchiligi forumi bo‘lib o‘tdi", "ru": "Состоялся форум «Республика Корея и Узбекистан: от диалога к практическим действиям — стратегическое партнёрство новой эпохи»", "en": "The forum “Republic of Korea and Uzbekistan: From Dialogue to Action — Strategic Partnership for a New Era” was held" },
+    "description": { "uz": "Institut direktori A. Kadirov Seul shahrida o‘tkazilgan xalqaro forumda ishtirok etdi.", "ru": "Директор института А. Кадиров принял участие в международном форуме, прошедшем в Сеуле.", "en": "Institute Director A. Kadirov took part in the international forum held in Seoul." },
     "category": "Forumlar",
     "publishedAt": null,
     "displayDate": "",
@@ -109,8 +109,8 @@
   {
     "id": "8e6778d1-475e-47e8-8208-c32cf72b112b",
     "slug": "8e6778d1-475e-47e8-8208-c32cf72b112b",
-    "title": "Dissertatsiya himoyasi bo‘lib o‘tadi",
-    "description": "#HIMOYA 2026-yil 26-iyun kuni Ravshanov Anvar Asatilloyevich ning 05.01.11-“Raqamli texnologiyalar va sun’iy intellekt” ixtisosligi bo‘yicha “Giperspektral tasvirlarga dastlabki ishlov berish asosida paxta kasalliklarini tasniflash algoritmlarini ishlab chiqish va takomillashtiri",
+    "title": { "uz": "Dissertatsiya himoyasi bo‘lib o‘tadi", "ru": "Состоится защита диссертации", "en": "A dissertation defense will be held" },
+    "description": { "uz": "#HIMOYA 2026-yil 26-iyun kuni Ravshanov Anvar Asatilloyevichning dissertatsiya himoyasi bo‘lib o‘tadi.", "ru": "#ЗАЩИТА 26 июня 2026 года состоится защита диссертации Анвара Асатиллоевича Равшанова.", "en": "#DEFENSE On June 26, 2026, Anvar Asatilloyevich Ravshanov will defend his dissertation." },
     "category": "Sun’iy intellekt",
     "publishedAt": null,
     "displayDate": "",
@@ -122,8 +122,8 @@
   {
     "id": "74ee93cf-d790-4303-83e9-ba1c3c06e483",
     "slug": "74ee93cf-d790-4303-83e9-ba1c3c06e483-cooperation-ties-are-expanding",
-    "title": "Xalqaro hamkorlik aloqalari kengaymoqda",
-    "description": "Amaliy tashrif bilan Koreya respublikasida bo'lib turgan Raqamli texnologiyalar va sun'iy intellektni rivojlantirish ilmiy-tadqiqot instituti direktori A.Kadirov sun’iy intellekt ishlab chiquvchi tadqiqotchilar uchun platformalar yaratuvchi Mondrian AI kompaniyasining Biznesni ri",
+    "title": { "uz": "Xalqaro hamkorlik aloqalari kengaymoqda", "ru": "Расширяются международные связи", "en": "International cooperation is expanding" },
+    "description": { "uz": "Institut direktori A. Kadirov Koreya Respublikasiga amaliy tashrif davomida Mondrian AI kompaniyasi vakillari bilan uchrashdi.", "ru": "Во время рабочего визита в Республику Корея директор института А. Кадиров встретился с представителями компании Mondrian AI.", "en": "During a working visit to the Republic of Korea, Institute Director A. Kadirov met with representatives of Mondrian AI." },
     "category": "Hamkorlik",
     "publishedAt": null,
     "displayDate": "",
@@ -135,8 +135,8 @@
   {
     "id": "a253b38d-e7ed-486e-a954-12f97c144852",
     "slug": "a253b38d-e7ed-486e-a954-12f97c144852-protection",
-    "title": "Dissertatsiya himoyasi bo‘lib o‘tadi",
-    "description": "#HIMOYA Joriy yilning 7-may kuni Axmedjanova Zarrina Iskandarovnaning 05.01.03 – “Informatikaning nazariy asoslari” (texnika fanlari) ixtisosligi bo‘yicha “Evolyutsion gibrid qidiruv asosida transport logistikasi axborot tizimi ma’lumotlarning o’zaro ta’sir modellari va algoritml",
+    "title": { "uz": "Dissertatsiya himoyasi bo‘lib o‘tadi", "ru": "Состоится защита диссертации", "en": "A dissertation defense will be held" },
+    "description": { "uz": "#HIMOYA 7-may kuni Axmedjanova Zarrina Iskandarovnaning dissertatsiya himoyasi bo‘lib o‘tadi.", "ru": "#ЗАЩИТА 7 мая состоится защита диссертации Заррины Искандаровны Ахмеджановой.", "en": "#DEFENSE On May 7, Zarrina Iskandarovna Axmedjanova will defend her dissertation." },
     "category": "Sun’iy intellekt",
     "publishedAt": null,
     "displayDate": "",
@@ -265,8 +265,16 @@
   {
     "id": "0ca53d5b-5077-436e-ae62-760046eb29d4",
     "slug": "0ca53d5b-5077-436e-ae62-760046eb29d4",
-    "title": "\"Xalqaro standartlar asosida ilmiy loyihalarni boshqarish” mavzusida o‘quv-trening o‘tkazildi",
-    "description": "Innovatsion rivojlanish agentligi hamda Jahon Banki hamkorligida amalga oshirilayotgan “O‘zbekiston milliy innovatsion tizimini modernizatsiya qilish” (MUNIS) loyihasi doirasida “Ilmiy loyihalarni boshqarish milliy standartini ishlab chiqish, sertifikatlashtirish tizimini yaratis",
+    "title": {
+      "uz": "Xalqaro standartlar asosida ilmiy loyihalarni boshqarish mavzusida o‘quv-trening o‘tkazildi",
+      "ru": "Проведён учебный тренинг по управлению научными проектами на основе международных стандартов",
+      "en": "A training course on managing research projects under international standards was held"
+    },
+    "description": {
+      "uz": "MUNIS loyihasi doirasida 100 nafar mutaxassis uchun ilmiy va innovatsion loyihalarni xalqaro talablar asosida boshqarish bo‘yicha o‘quv-trening tashkil etildi.",
+      "ru": "В рамках проекта MUNIS для 100 специалистов организован тренинг по управлению научными и инновационными проектами в соответствии с международными требованиями.",
+      "en": "Under the MUNIS project, 100 specialists attended training on managing research and innovation projects in accordance with international requirements."
+    },
     "category": "Hamkorlik",
     "publishedAt": null,
     "displayDate": "",
@@ -330,8 +338,16 @@
   {
     "id": "4e219ed6-c45e-43f2-b55a-009662b595fe",
     "slug": "4e219ed6-c45e-43f2-b55a-009662b595fe",
-    "title": "Xitoy Fanlar Akademiyasiga qarashli Shinjon Texnik Fizika va Kimyo Instituti delegatsiyasi bilan hamkorlik masalalari muhokama qilindi",
-    "description": "Kuni kecha Raqamli texnologiyalar va sun'iy intellektni rivojlantirish ilmiy-tadqiqot institutiga Xitoy Fanlar Akademiyasiga qarashli Shinjon Texnik Fizika va Kimyo Instituti delegatsiyasi tashrif buyurdi. Dastlab, Institut direktori A.Kadirov vakillarni Institutning ilmiy va ish",
+    "title": {
+      "uz": "Xitoy Fanlar Akademiyasiga qarashli Shinjon Texnik Fizika va Kimyo Instituti delegatsiyasi bilan hamkorlik masalalari muhokama qilindi",
+      "ru": "Обсуждены вопросы сотрудничества с делегацией Синьцзянского института технической физики и химии Китайской академии наук",
+      "en": "Cooperation was discussed with a delegation from the Xinjiang Institute of Technical Physics and Chemistry of the Chinese Academy of Sciences"
+    },
+    "description": {
+      "uz": "Institutga Xitoy Fanlar Akademiyasiga qarashli Shinjon Texnik Fizika va Kimyo Instituti delegatsiyasi tashrif buyurib, qo‘shma ilmiy loyihalar va mutaxassislar almashinuvi masalalarini muhokama qildi.",
+      "ru": "Институт посетила делегация Синьцзянского института технической физики и химии Китайской академии наук. Стороны обсудили совместные научные проекты и обмен специалистами.",
+      "en": "A delegation from the Xinjiang Institute of Technical Physics and Chemistry of the Chinese Academy of Sciences visited the institute to discuss joint research projects and specialist exchange."
+    },
     "category": "Hamkorlik",
     "publishedAt": null,
     "displayDate": "",

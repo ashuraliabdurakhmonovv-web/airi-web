@@ -12,6 +12,7 @@ import {
 import Image from "next/image";
 import CountUp from "@/app/_components/react-bits/count-up";
 import HeroImage from "@/public/Laboratoriya/Hero.png";
+import HeroImageDark from "@/public/research-hero-dark.png";
 import { useLocale } from "@/i18n";
 import { getResearchContent } from "@/i18n/research-content";
 
@@ -220,14 +221,23 @@ export const HeroSections = () => {
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 70vw"
-          className="object-cover object-[58%_center] brightness-[0.99] contrast-[1.12] saturate-[1.16]"
+          className="theme-image-light object-cover object-[58%_center] brightness-[0.99] contrast-[1.12] saturate-[1.16]"
+        />
+        <Image
+          src={HeroImageDark}
+          alt=""
+          aria-hidden="true"
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 70vw"
+          className="theme-image-dark object-cover object-[58%_center]"
         />
 
-        <div className="absolute inset-0 bg-[#f7faff]/86 lg:hidden" />
+        <div className="hero-reading-overlay absolute inset-0 bg-[#f7faff]/86 lg:hidden" />
 
-        <div className="absolute bottom-0 left-0 top-0 hidden w-36 bg-linear-to-r from-[#f7faff] via-[#f7faff]/50 to-transparent lg:block" />
+        <div className="hero-edge-overlay absolute bottom-0 left-0 top-0 hidden w-36 bg-linear-to-r from-[#f7faff] via-[#f7faff]/50 to-transparent lg:block" />
 
-        <div className="absolute inset-y-0 right-0 hidden w-14 bg-linear-to-l from-[#f7faff]/18 to-transparent lg:block" />
+        <div className="hero-right-overlay absolute inset-y-0 right-0 hidden w-14 bg-linear-to-l from-[#f7faff]/18 to-transparent lg:block" />
       </div>
 
       <ResearchHoverPanel />

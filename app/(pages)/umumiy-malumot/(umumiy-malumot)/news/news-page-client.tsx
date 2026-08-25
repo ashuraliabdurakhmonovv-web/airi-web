@@ -10,6 +10,7 @@ import { useNews } from "@/hooks/use-news";
 import {
   NEWS_CATEGORIES,
   categoryToQuery,
+  localizedCategory,
   localizedText,
   newsHref,
   newsImage,
@@ -178,7 +179,7 @@ export default function NewsPageClient() {
                   </Link>
                   <div className="flex flex-1 flex-col p-5">
                     <div className="mb-2 flex flex-wrap items-center gap-3 text-xs font-semibold text-gray-500">
-                      <span className="inline-flex items-center gap-1.5 text-blue-600"><Tag className="h-3.5 w-3.5" />{news.category}</span>
+                      <span className="inline-flex items-center gap-1.5 text-blue-600"><Tag className="h-3.5 w-3.5" />{localizedCategory(news.category, locale)}</span>
                       {displayDate ? <time dateTime={news.publishedAt || undefined}><CalendarDays className="mr-1 inline h-3.5 w-3.5" />{displayDate}</time> : null}
                     </div>
                     <h3 className="line-clamp-2 text-lg font-bold leading-snug text-gray-950 transition group-hover:text-blue-600 md:text-xl">

@@ -23,32 +23,33 @@ export const metadata: Metadata = pageMetadata({
 
 export default function TeamPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[#050912] text-white">
       <Navigation />
 
-      <section className="pt-36 lg:pt-48">
+      <section className="relative overflow-hidden pt-36 lg:pt-48">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_24%,rgba(45,212,191,0.09),transparent_30%),radial-gradient(circle_at_82%_44%,rgba(84,162,255,0.15),transparent_36%)]" />
         <div className="mx-auto max-w-350 px-6 lg:px-12">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
+          <div className="relative grid gap-12 rounded-2xl border border-white/12 bg-white/[0.055] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:p-8 lg:grid-cols-12 lg:items-end lg:p-10">
             <div className="lg:col-span-8">
-              <span className="mb-8 inline-flex items-center gap-4 font-mono text-sm text-white/50">
+              <span className="mb-8 inline-flex items-center gap-4 font-mono text-sm text-white/68">
                 <span className="h-px w-12 bg-white/20" />
                 <P value="Jamoa" />
               </span>
 
-              <h1 className="font-display text-[clamp(2.75rem,6.5vw,5.75rem)] leading-[0.92] tracking-tight">
+              <h1 className="max-w-4xl text-[clamp(2.35rem,5vw,4.5rem)] font-semibold leading-[1.04] tracking-[-0.035em] text-balance">
                 <span className="block"><P value="Mahsulot ortidagi" /></span>
-                <span className="block text-white/65"><P value="mutaxassislar." /></span>
+                <span className="block text-white/82"><P value="mutaxassislar." /></span>
               </h1>
             </div>
 
             <div className="lg:col-span-4">
-              <p className="text-lg leading-relaxed text-white/65">
+              <p className="text-[1.05rem] leading-[1.75] text-white/78">
                 <P value="Sun'iy intellekt, dasturiy injiniring, ma'lumotlar tahlili va amaliy tadqiqotlarni yagona mahsulotga aylantiradigan jamoa." />
               </p>
             </div>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-x-12 gap-y-5 border-t border-white/12 pt-7 font-mono text-xs uppercase tracking-[0.14em] text-white/38">
+          <div className="relative mt-8 flex flex-wrap gap-x-12 gap-y-5 rounded-xl border border-white/12 bg-white/[0.04] px-6 py-5 font-mono text-xs uppercase tracking-[0.14em] text-white/58 backdrop-blur-xl">
             <span>
               <span className="mr-2 text-lg text-white/85">
                 {String(teamMembers.length).padStart(2, "0")}
@@ -66,14 +67,14 @@ export default function TeamPage() {
       </section>
 
       <section className="mx-auto max-w-350 px-6 pb-24 pt-16 lg:px-12 lg:pb-32 lg:pt-20">
-        <div className="grid border-l border-t border-white/10 lg:grid-cols-2">
+        <div className="grid overflow-hidden rounded-2xl border border-white/12 bg-white/[0.025] shadow-[0_24px_80px_rgba(0,0,0,0.22)] lg:grid-cols-2">
           {teamMembers.map((member, index) => {
             const department = getDepartmentBySlug(member.departmentSlug);
 
             return (
               <article
                 key={member.slug}
-                className="overflow-hidden border-b border-r border-white/10 bg-black">
+                className="overflow-hidden border-b border-r border-white/12 bg-white/[0.055] backdrop-blur-xl transition-colors duration-500 hover:bg-white/[0.085]">
                 <Link
                   href={`/ishlab-chiqarish/team/${member.slug}`}
                   className="group grid h-full outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#54a2ff] sm:grid-cols-[minmax(11rem,0.82fr)_minmax(0,1.18fr)]">
@@ -96,11 +97,11 @@ export default function TeamPage() {
                       <P value={member.level} />
                     </span>
 
-                    <h2 className="mt-5 font-display text-[clamp(1.75rem,2.6vw,2.65rem)] leading-[1.02] tracking-tight text-white">
+                    <h2 className="mt-5 text-[clamp(1.45rem,2.1vw,2rem)] font-semibold leading-[1.25] tracking-[-0.025em] text-white">
                       {member.name}
                     </h2>
 
-                    <p className="mt-4 text-[15px] leading-relaxed text-white/62">
+                    <p className="mt-4 text-[15px] leading-[1.65] text-white/76">
                       <P value={member.role} />
                     </p>
 
@@ -109,7 +110,7 @@ export default function TeamPage() {
                         {department.focus.slice(0, 3).map((item) => (
                           <span
                             key={item}
-                            className="border border-white/12 px-2 py-1 font-mono text-[10px] text-white/45">
+                            className="rounded-md border border-white/14 bg-white/[0.04] px-2 py-1 font-mono text-[10px] text-white/65">
                             <P value={item} />
                           </span>
                         ))}
@@ -118,7 +119,7 @@ export default function TeamPage() {
 
                     <span
                       aria-hidden="true"
-                      className="mt-auto flex items-center justify-between gap-3 border-t border-white/10 pt-6 font-mono text-xs text-white/52 transition-colors group-hover:text-white">
+                      className="mt-auto flex items-center justify-between gap-3 border-t border-white/12 pt-6 font-mono text-xs text-white/68 transition-colors group-hover:text-white">
                       <P value="Profilni ko'rish" />
                       <ArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
@@ -130,20 +131,22 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="relative bg-black py-24 lg:py-32">
+      <section className="relative overflow-hidden bg-[#050912] py-24 lg:py-32">
         <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/12 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_76%_28%,rgba(84,162,255,0.13),transparent_34%)]" />
 
-        <div className="mx-auto max-w-350 px-6 lg:px-12">
+        <div className="relative mx-auto max-w-350 px-6 lg:px-12">
+          <div className="rounded-2xl border border-white/12 bg-white/[0.05] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.22)] backdrop-blur-xl sm:p-8 lg:p-10">
           <div className="mb-14 grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <span className="mb-6 inline-flex items-center gap-4 font-mono text-sm text-white/50">
                 <span className="h-px w-12 bg-white/20" />
                 <P value="Bo'linmalar" />
               </span>
-              <h2 className="font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.95] tracking-tight">
+              <h2 className="text-[clamp(2.15rem,4vw,3.6rem)] font-semibold leading-[1.06] tracking-[-0.03em] text-balance">
                 <P value="To'rtta bo'linma," />
                 <br />
-                <span className="text-white/65"><P value="bitta jarayon." /></span>
+                <span className="text-white/82"><P value="bitta jarayon." /></span>
               </h2>
             </div>
           </div>
@@ -162,7 +165,7 @@ export default function TeamPage() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <div>
-                      <h3 className="font-display text-xl leading-tight tracking-tight text-white lg:text-2xl">
+                      <h3 className="text-xl font-semibold leading-snug tracking-[-0.02em] text-white lg:text-2xl">
                         <P value={department.title} />
                       </h3>
                       {members.length > 0 && (
@@ -174,7 +177,7 @@ export default function TeamPage() {
                   </div>
 
                   <div className="lg:col-span-7">
-                    <p className="max-w-2xl leading-relaxed text-white/62">
+                    <p className="max-w-2xl leading-[1.7] text-white/76">
                       <P value={department.description} />
                     </p>
 
@@ -191,6 +194,7 @@ export default function TeamPage() {
                 </div>
               );
             })}
+          </div>
           </div>
         </div>
       </section>

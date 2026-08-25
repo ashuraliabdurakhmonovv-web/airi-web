@@ -51,11 +51,11 @@ function MetaRow({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid gap-1.5 border-b border-white/12 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
-      <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/38">
+    <div className="grid gap-1.5 border-b border-white/12 py-5 last:border-b-0 sm:grid-cols-[10rem_1fr] sm:gap-6">
+      <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/58">
         <P value={label} />
       </dt>
-      <dd className="leading-relaxed text-white/78">{children}</dd>
+      <dd className="leading-[1.65] text-white/82">{children}</dd>
     </div>
   );
 }
@@ -74,7 +74,7 @@ export default async function TeamMemberDetailPage({
   const otherMembers = teamMembers.filter((item) => item.slug !== member.slug);
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[#050912] text-white">
       <PersonJsonLd
         name={member.name}
         path={`/ishlab-chiqarish/team/${slug}`}
@@ -91,18 +91,19 @@ export default async function TeamMemberDetailPage({
       {/* ---------------------------------------------------------------- */}
       {/* Portret + asosiy ma'lumot                                         */}
       {/* ---------------------------------------------------------------- */}
-      <section className="pt-32 lg:pt-40">
-        <div className="mx-auto max-w-350 px-6 lg:px-12">
+      <section className="relative overflow-hidden pt-32 lg:pt-40">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_28%,rgba(45,212,191,0.09),transparent_30%),radial-gradient(circle_at_82%_42%,rgba(84,162,255,0.15),transparent_36%)]" />
+        <div className="relative mx-auto max-w-350 px-6 lg:px-12">
           <Link
             href="/ishlab-chiqarish/team"
-            className="group inline-flex items-center gap-3 font-mono text-sm text-white/55 transition-colors hover:text-white">
+            className="group inline-flex items-center gap-3 font-mono text-sm text-white/72 transition-colors hover:text-white">
             <ArrowLeft className="h-4 w-4 transition-transform duration-500 group-hover:-translate-x-1" />
             <P value="Jamoaga qaytish" />
           </Link>
 
-          <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="mt-10 grid gap-10 rounded-2xl border border-white/12 bg-white/[0.055] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:p-7 lg:grid-cols-12 lg:gap-14 lg:p-9">
             <div className="lg:col-span-5">
-              <div className="relative aspect-4/5 w-full overflow-hidden">
+              <div className="relative aspect-4/5 w-full overflow-hidden rounded-xl border border-white/12">
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -115,19 +116,19 @@ export default async function TeamMemberDetailPage({
             </div>
 
             <div className="lg:col-span-7">
-              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/62">
                 <P value={member.level} />
               </span>
 
-              <h1 className="mt-5 font-display text-[clamp(2.25rem,5vw,4.25rem)] leading-[0.98] tracking-tight">
+              <h1 className="mt-5 text-[clamp(2.15rem,4vw,3.75rem)] font-semibold leading-[1.06] tracking-[-0.035em] text-balance">
                 {member.name}
               </h1>
 
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/72">
+              <p className="mt-6 max-w-xl text-[1.05rem] leading-[1.75] text-white/80">
                 <P value={member.role} />
               </p>
 
-              <dl className="mt-12 border-t border-white/12">
+              <dl className="mt-10 overflow-hidden rounded-xl border border-white/12 bg-[#07101e]/48 px-5">
                 {department && (
                   <MetaRow label="Bo'lim"><P value={department.title} /></MetaRow>
                 )}
@@ -177,23 +178,23 @@ export default async function TeamMemberDetailPage({
       {/* ---------------------------------------------------------------- */}
       {/* Mutaxassis haqida                                                 */}
       {/* ---------------------------------------------------------------- */}
-      <section className="mx-auto max-w-350 px-6 pt-24 lg:px-12 lg:pt-32">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+      <section className="mx-auto max-w-350 px-6 pt-20 lg:px-12 lg:pt-24">
+        <div className="grid gap-10 rounded-2xl border border-white/12 bg-white/[0.05] p-6 shadow-[0_20px_65px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:p-8 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-3">
-            <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45 lg:sticky lg:top-28">
+            <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/62 lg:sticky lg:top-28">
               <P value="Mutaxassis haqida" />
             </h2>
           </div>
 
           <div className="max-w-[52rem] lg:col-span-9">
-            <p className="text-xl leading-[1.7] text-white/80 lg:text-[1.375rem]">
+            <p className="text-lg font-medium leading-[1.75] text-white/88 lg:text-xl">
               <P value={member.summary} />
             </p>
 
             {biography.map((paragraph) => (
               <p
                 key={paragraph}
-                className="mt-6 text-lg leading-[1.75] text-white/68">
+                className="mt-6 text-[1.05rem] leading-[1.8] text-white/76">
                 <P value={paragraph} />
               </p>
             ))}
@@ -202,7 +203,7 @@ export default async function TeamMemberDetailPage({
               {member.responsibilities.map((item) => (
                 <p
                   key={item}
-                  className="border-l border-white/18 pl-5 leading-relaxed text-white/62">
+                  className="rounded-r-lg border-l-2 border-[#54a2ff]/55 bg-white/[0.035] px-5 py-3 leading-[1.7] text-white/76">
                   <P value={item} />
                 </p>
               ))}
@@ -215,9 +216,9 @@ export default async function TeamMemberDetailPage({
       {/* Yo'nalishlar                                                      */}
       {/* ---------------------------------------------------------------- */}
       <section className="mx-auto max-w-350 px-6 pt-20 lg:px-12 lg:pt-24">
-        <div className="grid gap-10 border-t border-white/12 pt-12 lg:grid-cols-12 lg:gap-16">
+        <div className="grid gap-10 rounded-2xl border border-white/12 bg-white/[0.05] p-6 backdrop-blur-xl sm:p-8 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-3">
-            <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+            <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/62">
               <P value="Yo'nalishlar" />
             </h2>
           </div>
@@ -226,7 +227,7 @@ export default async function TeamMemberDetailPage({
               {member.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="border border-white/15 px-4 py-2.5 text-sm text-white/72">
+                  className="rounded-lg border border-white/15 bg-white/[0.045] px-4 py-2.5 text-sm text-white/78">
                   <P value={skill} />
                 </span>
               ))}
@@ -240,9 +241,9 @@ export default async function TeamMemberDetailPage({
       {/* ---------------------------------------------------------------- */}
       {member.portfolio.length > 0 && (
         <section className="mx-auto max-w-350 px-6 pt-20 lg:px-12 lg:pt-24">
-          <div className="grid gap-10 border-t border-white/12 pt-12 lg:grid-cols-12 lg:gap-16">
+          <div className="grid gap-10 rounded-2xl border border-white/12 bg-white/[0.05] p-6 backdrop-blur-xl sm:p-8 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-3">
-              <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+              <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/62">
                 <P value="Portfolio" />
               </h2>
             </div>
@@ -253,7 +254,7 @@ export default async function TeamMemberDetailPage({
                     <span className="font-mono text-xs text-white/28">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <p className="leading-relaxed text-white/70"><P value={item} /></p>
+                    <p className="leading-[1.7] text-white/78"><P value={item} /></p>
                   </div>
                 ))}
               </div>
@@ -267,9 +268,9 @@ export default async function TeamMemberDetailPage({
       {/* ---------------------------------------------------------------- */}
       {memberProjects.length > 0 && (
         <section className="mx-auto max-w-350 px-6 pt-20 lg:px-12 lg:pt-24">
-          <div className="grid gap-10 border-t border-white/12 pt-12 lg:grid-cols-12 lg:gap-16">
+          <div className="grid gap-10 rounded-2xl border border-white/12 bg-white/[0.05] p-6 backdrop-blur-xl sm:p-8 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-3">
-              <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+              <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/62">
                 <P value="Loyihalar" />
               </h2>
             </div>
@@ -286,7 +287,7 @@ export default async function TeamMemberDetailPage({
                         className={`block font-mono text-[11px] uppercase tracking-[0.16em] ${statusTextStyles[project.status]}`}>
                         <P value={project.status} />
                       </span>
-                      <span className="mt-2 block font-display text-xl tracking-tight text-white/88 transition-all duration-500 group-hover:translate-x-1 group-hover:text-white lg:text-2xl">
+                      <span className="mt-2 block text-xl font-semibold leading-snug tracking-[-0.02em] text-white/90 transition-all duration-500 group-hover:translate-x-1 group-hover:text-white lg:text-2xl">
                         {project.title}
                       </span>
                     </span>
@@ -304,9 +305,9 @@ export default async function TeamMemberDetailPage({
       {/* ---------------------------------------------------------------- */}
       {member.links && member.links.length > 0 && (
         <section className="mx-auto max-w-350 px-6 pt-20 lg:px-12 lg:pt-24">
-          <div className="grid gap-10 border-t border-white/12 pt-12 lg:grid-cols-12 lg:gap-16">
+          <div className="grid gap-10 rounded-2xl border border-white/12 bg-white/[0.05] p-6 backdrop-blur-xl sm:p-8 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-3">
-              <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+              <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/62">
                 <P value="Havolalar" />
               </h2>
             </div>
@@ -318,7 +319,7 @@ export default async function TeamMemberDetailPage({
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 border border-white/18 px-4 py-2.5 text-sm text-white/72 transition-colors hover:border-white hover:text-white">
+                    className="inline-flex items-center gap-2 rounded-lg border border-white/18 bg-white/[0.04] px-4 py-2.5 text-sm text-white/78 transition-colors hover:border-white hover:bg-white/[0.08] hover:text-white">
                     <P value={link.label} />
                     <ArrowUpRight className="h-3.5 w-3.5" />
                   </a>
@@ -333,24 +334,24 @@ export default async function TeamMemberDetailPage({
       {/* Boshqa mutaxassislar                                              */}
       {/* ---------------------------------------------------------------- */}
       <section className="mx-auto max-w-350 px-6 py-24 lg:px-12 lg:py-32">
-        <div className="border-t border-white/12 pt-12">
-          <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+        <div className="rounded-2xl border border-white/12 bg-white/[0.05] p-6 shadow-[0_20px_65px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:p-8">
+          <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.18em] text-white/62">
             <P value="Boshqa mutaxassislar" />
           </h2>
 
-          <div className="grid gap-px bg-white/10 sm:grid-cols-3">
+          <div className="grid overflow-hidden rounded-xl border border-white/12 bg-white/10 sm:grid-cols-3">
             {otherMembers.map((item) => (
               <Link
                 key={item.slug}
                 href={`/ishlab-chiqarish/team/${item.slug}`}
-                className="group flex flex-col bg-black p-6 transition-colors hover:bg-[oklch(0.12_0.01_260)]">
+                className="group flex flex-col bg-[#07101e]/78 p-6 transition-colors hover:bg-white/[0.09]">
                 <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-white/38">
                   <P value={item.level} />
                 </span>
-                <span className="mt-3 font-display text-xl leading-tight tracking-tight text-white/88 transition-all duration-500 group-hover:translate-x-1 group-hover:text-white">
+                <span className="mt-3 text-xl font-semibold leading-snug tracking-[-0.02em] text-white/90 transition-all duration-500 group-hover:translate-x-1 group-hover:text-white">
                   {item.name}
                 </span>
-                <span className="mt-3 line-clamp-2 text-sm leading-relaxed text-white/55">
+                <span className="mt-3 line-clamp-2 text-sm leading-[1.65] text-white/70">
                   <P value={item.role} />
                 </span>
               </Link>

@@ -10,5 +10,5 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   const { slug } = await params;
   const article = getStaticNewsBySlug(slug);
   if (!article) notFound();
-  return <NewsDetailClient article={article} related={getStaticRelatedNews(article, 3)} />;
+  return <NewsDetailClient article={article} related={getStaticRelatedNews(article, 30)} />;
 }

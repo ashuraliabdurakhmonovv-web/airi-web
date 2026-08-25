@@ -19,7 +19,18 @@ import { localizeResearchInfo } from "@/i18n/research-info-locales";
 export default function InterlaboratorySeminarsPage() {
   const { locale } = useLocale();
   const tr = (value: string) => localizeResearchInfo(value, locale);
-  const seminars = localizeResearchInfo(interlaboratorySeminars, locale);
+  const localizedSeminars = localizeResearchInfo(interlaboratorySeminars, locale);
+  const seminars = locale === "en"
+    ? localizedSeminars.map((seminar) => ({
+        ...seminar,
+        title: `Interlaboratory scientific seminar for ${seminar.specialties.map(({ code }) => code).join(" and ")}`,
+        members: seminar.members.map((member) => ({
+          ...member,
+          name: member.name.replace(/[ʻʼ‘’]/g, "'"),
+          details: `Approved seminar member and specialist for academic field ${member.specialty}.`,
+        })),
+      }))
+    : localizedSeminars;
   const totalMembers = seminars.reduce(
     (total, seminar) => total + seminar.members.length,
     0,
@@ -56,6 +67,11 @@ export default function InterlaboratorySeminarsPage() {
                   "Ilmiy kengash tarkibidagi laboratoriyalararo ilmiy seminarlar, ularning ixtisoslik yo‘nalishlari va tarkibi.",
                 )}
               </p>
+              {locale === "en" ? (
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-500">
+                  This page presents the approved interlaboratory seminar panels, their research specialties, leadership, participating laboratories, and full membership. It helps doctoral candidates and researchers identify the appropriate academic panel for preliminary dissertation review and scientific discussion.
+                </p>
+              ) : null}
             </div>
 
             <div className="grid gap-3 sm:grid-cols-3">

@@ -8,7 +8,7 @@ import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight } from "lucide-reac
 import useEmblaCarousel from "embla-carousel-react";
 import { useLocale } from "@/i18n";
 import { NewsImage } from "@/components/news/news-image";
-import { formatUzbekDate, localizedText, newsHref, newsImage } from "@/lib/news";
+import { formatUzbekDate, localizedCategory, localizedText, newsHref, newsImage } from "@/lib/news";
 import { getNewsHighlights } from "@/lib/news/news-highlights";
 
 const NEWS_LIST_HREF = "/umumiy-malumot/news";
@@ -71,11 +71,25 @@ export default function News() {
   if (!items.length) return null;
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#f8fafc] text-slate-950">
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(180deg,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-size-[80px_80px]" />
-      <div className="pointer-events-none absolute -right-48 -top-48 h-128 w-128 rounded-full bg-[#54a2ff]/12 blur-[150px]" />
-      <div className="pointer-events-none absolute -bottom-56 -left-40 h-112 w-112 rounded-full bg-[#2dd4bf]/10 blur-[150px]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#54a2ff]/55 to-transparent" />
+    <section className="home-news-section relative -mt-px w-full overflow-hidden bg-black text-white">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        controls={false}
+        disablePictureInPicture
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-35 select-none"
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+      <div className="pointer-events-none absolute inset-0 z-1 bg-linear-to-b from-black/68 via-[#071321]/78 to-[#0b132e]/94" />
+      <div className="pointer-events-none absolute inset-0 z-2 bg-[linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-size-[96px_96px] opacity-35" />
+      <div className="pointer-events-none absolute -right-48 -top-48 z-3 h-128 w-128 rounded-full bg-[#54a2ff]/14 blur-[150px]" />
+      <div className="pointer-events-none absolute -bottom-56 -left-40 z-3 h-112 w-112 rounded-full bg-[#2dd4bf]/12 blur-[150px]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-4 h-32 bg-linear-to-b from-black/35 to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-350 px-6 py-20 lg:px-12 lg:py-28">
         <div className="flex flex-col gap-9 lg:flex-row lg:items-end lg:justify-between">
@@ -91,7 +105,7 @@ export default function News() {
               </span>
             </h2>
 
-            <p className="mt-5 max-w-3xl font-sans text-base leading-7 text-slate-600 sm:text-[17px]">
+            <p className="mt-5 max-w-3xl font-sans text-base leading-7 text-white/72 sm:text-[17px]">
               {t.generalLanding.latestNewsDescription}
             </p>
           </div>
@@ -102,7 +116,7 @@ export default function News() {
                 type="button"
                 aria-label={t.news.previous}
                 onClick={showPrevious}
-                className="group flex h-12 w-12 shrink-0 cursor-pointer items-center justify-center border border-slate-900/12 bg-white text-slate-800 transition-colors hover:border-[#2478cf] hover:text-[#1768c4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2478cf]">
+                className="home-news-control group flex h-12 w-12 shrink-0 cursor-pointer items-center justify-center border border-white/16 bg-white/[0.055] text-white/82 backdrop-blur-xl transition-colors hover:border-[#54a2ff] hover:bg-white/[0.1] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2478cf]">
                 <ChevronLeft className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-0.5" />
               </button>
 
@@ -110,14 +124,14 @@ export default function News() {
                 type="button"
                 aria-label={t.news.next}
                 onClick={showNext}
-                className="group -ml-px flex h-12 w-12 shrink-0 cursor-pointer items-center justify-center border border-slate-900/12 bg-white text-slate-800 transition-colors hover:z-10 hover:border-[#2478cf] hover:text-[#1768c4] focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2478cf]">
+                className="home-news-control group -ml-px flex h-12 w-12 shrink-0 cursor-pointer items-center justify-center border border-white/16 bg-white/[0.055] text-white/82 backdrop-blur-xl transition-colors hover:z-10 hover:border-[#54a2ff] hover:bg-white/[0.1] hover:text-white focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2478cf]">
                 <ChevronRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5" />
               </button>
             </div>
 
             <Link
               href={NEWS_LIST_HREF}
-              className="group inline-flex h-12 items-center gap-3 border border-[#2478cf]/30 bg-[#2478cf]/8 px-6 font-sans text-sm font-semibold text-slate-900 transition-colors hover:border-[#2478cf]/60 hover:bg-[#2478cf]/14 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2478cf]">
+              className="home-news-all group inline-flex h-12 items-center gap-3 border border-white/16 bg-white/[0.055] px-6 font-sans text-sm font-semibold text-white/88 backdrop-blur-xl transition-colors hover:border-[#54a2ff]/70 hover:bg-[#54a2ff]/12 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2478cf]">
               {t.news.allNews}
               <ArrowRight className="h-4 w-4 text-[#1768c4] transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
@@ -145,7 +159,7 @@ export default function News() {
                   <article className="h-full">
                     <Link
                       href={newsHref(item)}
-                      className="group flex h-full min-h-[32rem] flex-col overflow-hidden border border-slate-900/10 bg-white outline-none transition-all duration-500 hover:border-[#2478cf]/55 hover:shadow-[0_24px_70px_-35px_rgba(23,104,196,0.5)] focus-visible:border-[#2478cf] focus-visible:ring-2 focus-visible:ring-[#2478cf]/30">
+                      className="home-news-card group flex h-full min-h-[32rem] flex-col overflow-hidden rounded-2xl border border-white/14 bg-[#0f1b2e]/62 backdrop-blur-xl outline-none transition-all duration-500 hover:border-[#54a2ff]/55 hover:bg-[#14243b]/74 hover:shadow-[0_24px_70px_-35px_rgba(23,104,196,0.5)] focus-visible:border-[#2478cf] focus-visible:ring-2 focus-visible:ring-[#2478cf]/30">
                       <div className="relative aspect-16/10 shrink-0 overflow-hidden bg-slate-100">
                         <NewsImage
                           src={image}
@@ -163,32 +177,32 @@ export default function News() {
                       <div className="flex flex-1 flex-col p-6 lg:p-7">
                         <div className="flex min-h-5 flex-wrap items-center justify-between gap-x-4 gap-y-2 font-sans text-[11px] font-semibold uppercase tracking-[0.12em]">
                           <span className="text-[#1768c4]">
-                            {item.category || t.nav.news}
+                            {localizedCategory(item.category, locale) || t.nav.news}
                           </span>
 
                           {displayDate ? (
                             <time
                               dateTime={item.publishedAt || undefined}
-                              className="inline-flex items-center gap-1.5 normal-case tracking-normal text-slate-500">
+                              className="inline-flex items-center gap-1.5 normal-case tracking-normal text-white/58">
                               <CalendarDays className="h-3.5 w-3.5 text-[#3a8fdf]" />
                               {displayDate}
                             </time>
                           ) : null}
                         </div>
 
-                        <h3 className="mt-5 line-clamp-3 font-display text-xl font-semibold leading-[1.25] tracking-[-0.015em] text-slate-950 transition-colors duration-300 group-hover:text-[#1768c4]">
+                        <h3 className="mt-5 line-clamp-3 font-display text-xl font-semibold leading-[1.25] tracking-[-0.015em] text-white transition-colors duration-300 group-hover:text-[#69b3ff]">
                           {title}
                         </h3>
 
                         {excerpt ? (
-                          <p className="mt-4 line-clamp-3 font-sans text-[14px] leading-6 text-slate-600">
+                          <p className="mt-4 line-clamp-3 font-sans text-[14px] leading-6 text-white/70">
                             {excerpt}
                           </p>
                         ) : null}
 
-                        <span className="mt-auto block h-px w-full bg-slate-900/10 transition-colors duration-500 group-hover:bg-[#2478cf]/35" />
+                        <span className="mt-auto block h-px w-full bg-white/12 transition-colors duration-500 group-hover:bg-[#54a2ff]/40" />
 
-                        <span className="mt-5 inline-flex items-center justify-between gap-4 font-sans text-[12px] font-bold uppercase tracking-[0.14em] text-slate-800 transition-colors group-hover:text-[#1768c4]">
+                        <span className="mt-5 inline-flex items-center justify-between gap-4 font-sans text-[12px] font-bold uppercase tracking-[0.14em] text-white/86 transition-colors group-hover:text-[#69b3ff]">
                           {t.news.readMore}
                           <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                         </span>
@@ -202,9 +216,9 @@ export default function News() {
         </div>
 
         <div className="mx-auto mt-9 flex w-full max-w-md items-center gap-5">
-          <span className="shrink-0 font-mono text-[11px] tracking-[0.15em] text-slate-500">
+          <span className="shrink-0 font-mono text-[11px] tracking-[0.15em] text-white/55">
             {String(currentIndex + 1).padStart(2, "0")}
-            <span className="mx-2 text-slate-300">/</span>
+            <span className="mx-2 text-white/28">/</span>
             {String(snaps.length).padStart(2, "0")}
           </span>
 
@@ -219,7 +233,7 @@ export default function News() {
                 className={`h-1 min-w-3 flex-1 cursor-pointer transition-colors duration-500 ${
                   index === currentIndex
                     ? "bg-linear-to-r from-[#2478cf] to-[#14b8a6]"
-                    : "bg-slate-900/12 hover:bg-[#2478cf]/40"
+                    : "bg-white/14 hover:bg-[#2478cf]/40"
                 }`}
               />
             ))}

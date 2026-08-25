@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import HeroImag from "@/public/heroimg.png";
+import HeroImageDark from "@/public/general-hero-dark-v2.png";
 import { useLocale } from "@/i18n";
 
 type StatProps = {
@@ -489,14 +490,23 @@ export default function Hero() {
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover object-[48%_center] contrast-[1.05] saturate-[1.08]"
+          className="theme-image-light object-cover object-[48%_center] contrast-[1.05] saturate-[1.08]"
+        />
+        <Image
+          src={HeroImageDark}
+          alt=""
+          aria-hidden="true"
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 55vw"
+          className="theme-image-dark object-cover object-center"
         />
 
         {/* Mobil qurilmalar uchun fon (matn aniq o'qilishi uchun) */}
-        <div className="absolute inset-0 bg-[#f7faff]/85 lg:hidden" />
+        <div className="hero-reading-overlay absolute inset-0 bg-[#f7faff]/85 lg:hidden" />
 
         {/* Desktop uchun rasmning chap tomonini asosiy fon rangiga silliq o'tkazuvchi gradient */}
-        <div className="absolute bottom-0 left-0 top-0 hidden w-48 bg-linear-to-r from-[#f7faff] via-[#f7faff]/70 to-transparent lg:block" />
+        <div className="hero-edge-overlay absolute bottom-0 left-0 top-0 hidden w-48 bg-linear-to-r from-[#f7faff] via-[#f7faff]/70 to-transparent lg:block" />
       </div>
 
       <FloatingCards />

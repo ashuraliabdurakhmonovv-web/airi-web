@@ -22,7 +22,7 @@ export const conferences: Conference[] = [
       "https://server.airi.uz/public_media/img/e26542ae-0019-43de-a188-e5bca241b31f.jpg",
     imageAlt:
       "“Raqamli texnologiyalar va sun'iy intellekt: Bugun va kelajak” konferensiyasi rasmi",
-    link: "http://airi.uz/digitaltechnologiesandartificialintelligencetodayandthefuture",
+    link: "/umumiy-malumot/news/fe5ae121-71af-4f3a-8216-89973bae3090-the-international-scientificpractical-conference-on-the-topic-digital-technologies-and-artificial-intelligence-today-and-the-future-has-been-held",
     isUpcoming: true,
   },
   {

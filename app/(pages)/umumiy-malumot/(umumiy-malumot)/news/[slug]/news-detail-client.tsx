@@ -5,10 +5,15 @@ import Link from "next/link";
 import { ArrowLeft, CalendarDays, Sparkles, Tag } from "lucide-react";
 import { useLocale } from "@/i18n";
 import { NewsImage } from "@/components/news/news-image";
-import type { StaticNewsArticle, StaticNewsIndexItem } from "@/lib/news/static-news-repository";
+import {
+  getStaticNewsIndexById,
+  type StaticNewsArticle,
+  type StaticNewsIndexItem,
+} from "@/lib/news/static-news-repository";
 import {
   categoryToQuery,
   getAssetUrl,
+  localizedCategory,
   localizedText,
   newsHref,
   newsImage,
@@ -25,24 +30,38 @@ function plainParagraphs(value: string) {
 
 export default function NewsDetailClient({ article, related }: { article: StaticNewsArticle; related: StaticNewsIndexItem[] }) {
   const { locale, t } = useLocale();
+  const localizedIndexItem = getStaticNewsIndexById(article.id);
+  const hasLocalizedContent =
+    typeof article.content !== "string" || locale === "uz";
+  const hasLocalizedHtml =
+    typeof article.contentHtml !== "string" || locale === "uz";
 
-  const content = localizedText(article?.content, locale);
+  const content = hasLocalizedContent
+    ? localizedText(article?.content, locale)
+    : "";
   const safeHtml = useMemo(() => {
+    if (!hasLocalizedHtml) return "";
     const html = localizedText(article?.contentHtml, locale);
     return html ? rewriteArticleAssetUrls(html) : "";
-  }, [article.contentHtml, locale]);
+  }, [article.contentHtml, hasLocalizedHtml, locale]);
 
-  const title = localizedText(article.title, locale);
-  const excerpt = localizedText(article.description, locale);
+  const title = localizedText(localizedIndexItem?.title ?? article.title, locale);
+  const excerpt = localizedText(
+    localizedIndexItem?.description ?? article.description,
+    locale,
+  );
   const image = newsImage(article);
   const displayDate = article.displayDate;
   const gallery = (article.images || [])
     .filter((item): item is string => typeof item === "string")
     .map(getAssetUrl)
     .filter((item) => item && item !== image);
+  const localizedRelated = related
+    .filter((item) => locale === "uz" || typeof item.title !== "string")
+    .slice(0, 3);
 
   return (
-    <main className="min-h-screen text-[#111827]">
+    <main className="news-detail-page min-h-screen text-[#111827]">
       <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-14">
         <Link href="/umumiy-malumot/news" className="airi-link mb-8 inline-flex items-center gap-2 text-sm font-semibold">
           <ArrowLeft className="h-4 w-4" /> {t.newsPage.backToNews}
@@ -53,7 +72,7 @@ export default function NewsDetailClient({ article, related }: { article: Static
             href={`/umumiy-malumot/news?category=${categoryToQuery(article.category)}`}
             className="mb-4 inline-flex items-center gap-1.5 text-sm font-bold text-blue-600"
           >
-            <Tag className="h-4 w-4" /> {article.category}
+            <Tag className="h-4 w-4" /> {localizedCategory(article.category, locale)}
           </Link>
           <h1 className="text-3xl font-bold leading-tight text-gray-950 md:text-5xl">{title}</h1>
           <div className="mt-5 flex flex-wrap items-center gap-5 text-sm text-gray-500">
@@ -85,23 +104,23 @@ export default function NewsDetailClient({ article, related }: { article: Static
 
       </article>
 
-      {related.length > 0 ? (
-        <section className="border-t border-gray-200 bg-white py-12">
+      {localizedRelated.length > 0 ? (
+        <section className="recommended-news border-t border-gray-200 bg-white py-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <h2 className="mb-7 flex items-center gap-2 text-2xl font-bold"><Sparkles className="h-5 w-5 text-blue-600" />{t.newsPage.recommendedNews}</h2>
+            <h2 className="recommended-news-title mb-7 flex items-center gap-2 text-2xl font-bold"><Sparkles className="h-5 w-5 text-blue-600" />{t.newsPage.recommendedNews}</h2>
             <div className="grid gap-7 md:grid-cols-3">
-              {related.map((item) => {
+              {localizedRelated.map((item) => {
                 const itemTitle = localizedText(item.title, locale);
                 const itemImage = newsImage(item);
                 const itemDate = item.displayDate;
                 return (
-                  <article key={item.id} className="group">
+                  <article key={item.id} className="recommended-news-card group">
                     <Link href={newsHref(item)} className="relative block aspect-[16/10] overflow-hidden bg-slate-100">
                       <NewsImage src={itemImage} alt={itemTitle} sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
                     </Link>
-                    <p className="mt-4 text-xs font-semibold text-blue-600">{item.category}</p>
-                    <h3 className="mt-2 line-clamp-3 text-lg font-bold leading-snug transition group-hover:text-blue-600"><Link href={newsHref(item)}>{itemTitle}</Link></h3>
-                    {itemDate ? <time className="mt-2 block text-xs text-gray-500">{itemDate}</time> : null}
+                    <p className="mt-4 text-xs font-semibold text-blue-600">{localizedCategory(item.category, locale)}</p>
+                    <h3 className="recommended-news-card-title mt-2 line-clamp-3 text-lg font-bold leading-snug transition group-hover:text-blue-600"><Link href={newsHref(item)}>{itemTitle}</Link></h3>
+                    {itemDate ? <time className="recommended-news-date mt-2 block text-xs text-gray-500">{itemDate}</time> : null}
                   </article>
                 );
               })}

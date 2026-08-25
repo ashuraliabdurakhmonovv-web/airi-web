@@ -48,7 +48,7 @@ function LanguageDropdown({ solid }: { solid: boolean }) {
           aria-label={t.hero.languageSelector}
           className={`group inline-flex h-9 items-center gap-1.5 rounded-full border px-3 text-xs font-semibold tracking-[0.14em] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 ${
             solid
-              ? "border-foreground/15 bg-background/70 text-foreground/70 hover:border-foreground/30 hover:text-foreground focus-visible:ring-foreground/30"
+              ? "border-white/16 bg-white/[0.055] text-white/78 backdrop-blur-xl hover:border-white/32 hover:bg-white/[0.09] hover:text-white focus-visible:ring-white/40"
               : "border-white/20 bg-white/10 text-white/75 backdrop-blur-md hover:border-white/40 hover:bg-white/15 hover:text-white focus-visible:ring-white/50"
           }`}
         >
@@ -66,7 +66,7 @@ function LanguageDropdown({ solid }: { solid: boolean }) {
         sideOffset={8}
         className={`min-w-36 rounded-xl p-1 ${
           solid
-            ? "border-foreground/10 bg-background/95 text-foreground"
+            ? "border-white/14 bg-[#0b132e]/78 text-white shadow-xl backdrop-blur-2xl"
             : "border-white/15 bg-[#101318]/95 text-white"
         }`}
       >
@@ -80,10 +80,10 @@ function LanguageDropdown({ solid }: { solid: boolean }) {
               className={`cursor-pointer justify-between rounded-lg px-3 py-2.5 text-xs font-semibold tracking-[0.08em] ${
                 isActive
                   ? solid
-                    ? "bg-foreground/8 text-foreground"
+                    ? "bg-white/12 text-white"
                     : "bg-white/12 text-white"
                   : solid
-                    ? "text-foreground/65 hover:bg-foreground/6 hover:text-foreground"
+                    ? "text-white/68 hover:bg-white/8 hover:text-white"
                     : "text-white/65 hover:bg-white/8 hover:text-white"
               }`}
             >
@@ -105,6 +105,13 @@ function LanguageDropdown({ solid }: { solid: boolean }) {
 export function Navigation() {
   const { locale, t } = useLocale();
   const copy = getProductionContent(locale).nav;
+  const localizedNavLinks = [
+    { href: "/", label: copy.home },
+    ...navLinks.map((link, index) => ({
+      ...link,
+      label: copy.links[index],
+    })),
+  ];
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -173,7 +180,7 @@ export function Navigation() {
       <nav
         className={`mx-auto transition-all duration-500 ${
           usesSolidNav
-            ? "max-w-350 border border-foreground/10 bg-background/88 shadow-lg backdrop-blur-xl"
+            ? "max-w-350 border border-white/14 bg-[#0b132e]/48 shadow-[0_18px_55px_rgba(0,0,0,0.18)] backdrop-blur-2xl"
             : "max-w-350 bg-transparent"
         } ${isScrolled ? "rounded-xl" : ""}`}>
         <div
@@ -198,7 +205,7 @@ export function Navigation() {
 
             <span
               className={`h-8 w-px shrink-0 bg-linear-to-b from-transparent to-transparent sm:h-10 ${
-                usesSolidNav ? "via-foreground/25" : "via-white/45"
+                usesSolidNav ? "via-white/25" : "via-white/45"
               }`}
             />
 
@@ -215,19 +222,19 @@ export function Navigation() {
           </a>
 
           <div className="hidden min-w-0 items-center justify-center gap-1 lg:flex">
-            {navLinks.map((link, index) => (
+            {localizedNavLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 className={`group relative px-3 py-2 text-sm font-medium transition-colors duration-300 xl:text-[15px] ${
                   usesSolidNav
-                    ? "text-foreground/68 hover:text-foreground"
+                    ? "text-white/72 hover:text-white"
                     : "text-white/72 hover:text-white"
                 }`}>
-                {copy.links[index]}
+                {link.label}
                 <span
                   className={`absolute inset-x-3 -bottom-0.5 h-px origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${
-                    usesSolidNav ? "bg-foreground" : "bg-white"
+                    usesSolidNav ? "bg-[#54a2ff]" : "bg-white"
                   }`}
                 />
               </a>
@@ -241,7 +248,7 @@ export function Navigation() {
               size="sm"
               className={`h-9 rounded-full px-4 text-sm transition-all duration-500 ${
                 usesSolidNav
-                  ? "bg-foreground text-background hover:bg-foreground/90"
+                  ? "bg-[#0b2c71] text-white hover:bg-[#123d91]"
                   : "bg-white text-black hover:bg-white/90"
               }`}>
               <a href="/ishlab-chiqarish#contact">{copy.contact}</a>
@@ -252,7 +259,7 @@ export function Navigation() {
             type="button"
             onClick={() => setIsMobileMenuOpen((open) => !open)}
             className={`grid h-10 w-10 place-items-center transition-colors duration-500 lg:hidden ${
-              usesSolidNav ? "text-foreground" : "text-white"
+              usesSolidNav ? "text-white" : "text-white"
             }`}
             aria-label={isMobileMenuOpen ? t.common.closeMenu : t.common.openMenu}
             aria-expanded={isMobileMenuOpen}>
@@ -274,7 +281,7 @@ export function Navigation() {
         <div className="flex h-full flex-col px-6 pb-8 pt-28 sm:px-8">
           <div className="flex-1 overflow-y-auto">
             <div className="grid gap-3">
-              {navLinks.map((link, index) => (
+              {localizedNavLinks.map((link, index) => (
                 <a
                   key={link.href}
                   href={link.href}
@@ -289,7 +296,7 @@ export function Navigation() {
                       ? `${index * 55}ms`
                       : "0ms",
                   }}>
-                  {copy.links[index]}
+                  {link.label}
                 </a>
               ))}
             </div>

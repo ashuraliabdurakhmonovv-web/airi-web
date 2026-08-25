@@ -90,14 +90,14 @@ const contactLinks = [
 
 const socials = [
   { href: "https://t.me/airiuz", label: "Telegram", Icon: Send },
-  { href: "https://youtube.com/@airi_uz", label: "YouTube", Icon: Youtube },
+  { href: "https://www.youtube.com/@airi_uz", label: "YouTube", Icon: Youtube },
   {
     href: "https://www.linkedin.com/company/airiuz",
     label: "LinkedIn",
     Icon: Linkedin,
   },
   {
-    href: "https://m.facebook.com/ai.uzbekistan",
+    href: "https://www.facebook.com/ai.uzbekistan/",
     label: "Facebook",
     Icon: Facebook,
   },
@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
   const localizeHref = (href: string) => localePath(href, locale);
 
   return (
-    <footer className="relative bg-slate-950 text-white">
+    <footer className="relative bg-[#0b132e] text-white">
       <div className="h-px w-full bg-linear-to-r from-[#604eff] via-blue-500 to-cyan-300" />
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
